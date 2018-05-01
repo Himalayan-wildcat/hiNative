@@ -4,24 +4,21 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 |avatar|string|
-|email|string|null: false, unique: true|
 
 ### Association
-- has_many :messages
-- has_many :catgories, through: :user_categories
+- has_many :questions
+- has_many :categories, through: :user_categories
+- has_many : user_categories
 
 
 ## questionsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|message|text|null: false, foreign_key: true|
-|user_id|integer|
-|avatar_url|string|
-|image_url|string|
-|audio_url|string|
+|message|text|null: false|
+|user|reference|foreign_key: true
 
 ### Association
 - belongs_to :user
@@ -31,20 +28,20 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|
-|category|references|
+|user|references|foreign_key: true
+|category|references|foreign_key: true
 
 ### Association
-- has_many :users
-- has_many :categories
+- belongs_to :user
+- belongs_to :category
 
 
 ## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|list|string|
+|list|string|null: false
 
 ### Association
+- has_many :user_catogories
 - has_many :users, through: : user_categories
-
