@@ -4,7 +4,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
+|user_name|string|null: false, unique: true|
+|avatar|string|
 |email|string|null: false, unique: true|
 |password|integer|null: false|
 
@@ -18,7 +19,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |text|text|
-|image|string|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
