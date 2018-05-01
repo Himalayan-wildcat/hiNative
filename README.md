@@ -18,7 +18,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false, foreign_key: true|
-|user_id|integer|null: false|
+|user_id|integer|
 |avatar_url|string|
 |image_url|string|
 |audio_url|string|
