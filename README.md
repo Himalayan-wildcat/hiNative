@@ -7,31 +7,44 @@
 |user_name|string|null: false, unique: true|
 |avatar|string|
 |email|string|null: false, unique: true|
-|password|integer|null: false|
 
 ### Association
 - has_many :messages
-- has_many :categories
+- has_many :catgories, through: :user_categories
 
 
-## messagesテーブル
+## questionsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|
-|user_id|integer|null: false, foreign_key: true|
+|message|text|null: false, foreign_key: true|
+|user_id|integer|null: false|
+|avatar_url|string|
+|image_url|string|
+|audio_url|string|
 
 ### Association
 - belongs_to :user
-- belongs_to :category
+
+
+## user_categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|
+|category|references|
+
+### Association
+- has_many :users
+- has_many :categories
 
 
 ## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|list|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|list|string|
 
 ### Association
-- has_many :messages
+- has_many :users, through: : user_categories
+
