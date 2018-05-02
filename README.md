@@ -20,12 +20,6 @@
 |text|text|null: false|
 |user|reference|foreign_key: true
 |admin|reference|foreign_key: true
-<!--
-下記属性はawsで管理する為、本DB内の管理対象外とする。
-　ー audio_url
-　ー avatar_url
-　ー image_url
---!>
 
 ### Association
 - belongs_to :user
