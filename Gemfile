@@ -43,6 +43,10 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.4.1'
 end
 
+group :test  do
+  gem 'faker'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'

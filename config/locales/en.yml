@@ -33,6 +33,6 @@ en:
   activerecord:
     errors:
       messages:
-        blank: "what the fuck!!! You need to fill it"
-        taken: "what the hell are you thinking? it already exists"
+        blank: "You need to fill it"
+        taken: "Watch out!! it already exists"
   hello: "Hello world"
