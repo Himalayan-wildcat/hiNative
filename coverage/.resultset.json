@@ -1,0 +1,76 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/helpers/questions_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/controllers/questions_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/controllers/users_controller.rb": [
+        0,
+        0
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/controllers/chats_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/naterive/Desktop/TechExpert/rails/hiNative/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1525329659
+  }
+}
