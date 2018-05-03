@@ -1,20 +1,37 @@
-<h2>Log in</h2>
+<header>
+  <div id='fb-root'></div>
+  <nav class='navbar navbar-default navbar_not_login' id='navbar_body_ft'>
+  <div class='container_nav flex flex_between'>
+  <div class='nav_brand'>
+  <a class="" data-no-turbolink="true" href="/"><i class='icon-logo_type'></i>
+  </a></div>
+  <div class='nav_listgroup'>
+  <ul class='login_buttons flex flex_center'>
+  <li><a class="btn btn_bordered_white btn-mini btn-square2 track" data-category="sign_in" data-action="click" data-label="null" rel="nofollow" href="/users/sign_in">ログイン</a></li>
+  <li><a class="btn btn-mini btn-primary2 btn-square2" href="/users/sign_up">新規登録</a></li>
+  </ul>
+  </div>
+  </div>
+  </nav>
+</header>
+
+<h2>ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :メールアドレス %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :パスワード %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :自動ログインを有効にする %>
     </div>
   <% end -%>
 

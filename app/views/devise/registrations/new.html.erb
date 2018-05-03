@@ -1,34 +1,83 @@
-<h2>Sign up</h2>
+  <header>
+    <div id='fb-root'></div>
+    <nav class='navbar navbar-default navbar_not_login' id='navbar_body_ft'>
+    <div class='container_nav flex flex_between'>
+    <div class='nav_brand'>
+    <a class="" data-no-turbolink="true" href="/"><i class='icon-logo_type'></i>
+    </a></div>
+    <div class='nav_listgroup'>
+    <ul class='login_buttons flex flex_center'>
+    <li><a class="btn btn_bordered_white btn-mini btn-square2 track" data-category="sign_in" data-action="click" data-label="null" rel="nofollow" href="/users/sign_in">ログイン</a></li>
+    <li><a class="btn btn-mini btn-primary2 btn-square2" href="/users/sign_up">新規登録</a></li>
+    </ul>
+    </div>
+    </div>
+    </nav>
+  </header>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="page-container">
+  <div class="main">
+  <div class="section">
+  <h2>新規登録</h2>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <div class="field-label">
+      <%= f.label :ユーザー名%><br />
+      </div>
+      <div class="field-input">
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+      <%= f.label :メールアドレス %><br />
+      </div>
+      <div class="field-input">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+      <%= f.label :パスワード %>
+      </div>
+      <div class="field-input">
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="field-label">
+      <%= f.label :パスワード（確認用） %><br />
+      </div>
+      <div class="field-input">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+    </div>
+
+    <p>
+    <label for="categories">興味のあるカテゴリーを選択してください：</label>
+    <select id="categories" name="categories">
+    <option value="旅行" selected >旅行</option>
+    <option value="交通">交通</option>
+    <option value="飲食店">飲食店</option>
+    <option value="病院">病院</option>
+    <option value="学校">学校</option>
+    <option value="雑貨屋">雑貨屋</option>
+    </select>
+    </p>
+
+    <div class="actions">
+      <%= f.submit "Sign up", {class: "submit-btn"} %>
+    </div>
+  <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :categories_name %><br />
-    <%= f.select :list, [["旅行", "旅行"], ["飲食店", "飲食店"], ["交通", "交通"], ["病院", "病院"], ["学校", "学校"], ["その他", "その他"]] ,class:"form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
