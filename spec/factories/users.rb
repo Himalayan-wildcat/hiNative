@@ -1,7 +1,9 @@
 FactoryGirl.define do
   factory :user do
     # name { Faker::Pokemon.name }
-    email Faker::Internet.free_email
+    sequence :email do |n|
+      "test#{n}@gmail.com"
+  end
     password = Faker::Internet.password(6)
     password password
     password_confirmation password
