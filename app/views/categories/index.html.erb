@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"240011c68f","applicationID":"11345295","transactionName":"Jg4MFRNdCllURU4XRgASFggOXBUaRU4RAw==","queueTime":0,"applicationTime":93,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>HiNative | 全ての外国語学習者のためのQ&amp;Aサービス。</title>
+<link href='https://hinative.com/ja/questions/type' rel='canonical'>
+
+<link href='https://hinative.com/en-US/questions/type' hreflang='en' rel='alternate'>
+<link href='https://hinative.com/ja/questions/type' hreflang='ja' rel='alternate'>
+<link href='https://hinative.com/zh-CN/questions/type' hreflang='zh' rel='alternate'>
+<link href='https://hinative.com/es-MX/questions/type' hreflang='es' rel='alternate'>
+<link href='https://hinative.com/tr/questions/type' hreflang='tr' rel='alternate'>
+<link href='https://hinative.com/pt-PT/questions/type' hreflang='pt' rel='alternate'>
+<link href='https://hinative.com/fr-FR/questions/type' hreflang='fr' rel='alternate'>
+<link href='https://hinative.com/it/questions/type' hreflang='it' rel='alternate'>
+<link href='https://hinative.com/ko/questions/type' hreflang='ko' rel='alternate'>
+<link href='https://hinative.com/ru/questions/type' hreflang='ru' rel='alternate'>
+<link href='https://hinative.com/de/questions/type' hreflang='de' rel='alternate'>
+<link href='https://hinative.com/pl/questions/type' hreflang='pl' rel='alternate'>
+<link href='https://hinative.com/zh-TW/questions/type' hreflang='zh-TW' rel='alternate'>
+<link href='https://hinative.com/pt-BR/questions/type' hreflang='pt-BR' rel='alternate'>
+<link href='https://hinative.com/vi/questions/type' hreflang='vi' rel='alternate'>
+
+<meta content='外国語や語学、文化についてネイティブスピーカーに簡単に質問できる気軽なQ&amp;Aサービスです。110言語以上が対応しています。' name='description'>
+<meta content='HiNative' name='keywords'>
+<link href='//pagead2.googlesyndication.com' rel='dns-prefetch'>
+<link href='//googleads.g.doubleclick.net' rel='dns-prefetch'>
+<link href='//tpc.googlesyndication.com' rel='dns-prefetch'>
+<link href='//www.gstatic.com' rel='dns-prefetch'>
+<link href='//adservice.google.com' rel='dns-prefetch'>
+<link href='//www.google-analytics.com' rel='dns-prefetch'>
+<link href='//platform.twitter.com' rel='dns-prefetch'>
+<link href='//syndication.twitter.com' rel='dns-prefetch'>
+<link href='//www.facebook.com' rel='dns-prefetch'>
+<link href='//staticxx.facebook.com' rel='dns-prefetch'>
+<link href='//connect.facebook.net' rel='dns-prefetch'>
+<link href='//cdn.mxpnl.com' rel='dns-prefetch'>
+<link href='//api.mixpanel.com' rel='dns-prefetch'>
+<link href='//js-agent.newrelic.com' rel='dns-prefetch'>
+
+<meta content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover' name='viewport'>
+<meta content='N8HyX0xz2cesktDgW2B42h5TtVZyfaPMNNOyidUM0Mc' name='google-site-verification'>
+<meta content='HiNative | 全ての外国語学習者のためのQ&amp;Aサービス。' property='og:title'>
+<meta content='article' property='og:type'>
+<meta content='https://hinative.com/ja/questions/type' property='og:url'>
+<meta content='https://d1gnxku736h7az.cloudfront.net/assets/ogp-99f16c9269f60733f36978d6dd47ab0ee648e6e0ef54fe45ecdc9166077d1318.png' property='og:image'>
+<meta content='外国語や語学、文化についてネイティブスピーカーに簡単に質問できる気軽なQ&amp;Aサービスです。110言語以上が対応しています。' property='og:description'>
+<meta content='HiNative' property='og:site_name'>
+<meta content='@HiNativeEN' name='twitter:site'>
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='@HiNativeEN' name='twitter:creator'>
+<meta content='HiNative | 全ての外国語学習者のためのQ&amp;Aサービス。' name='twitter:title'>
+<meta content='外国語や語学、文化についてネイティブスピーカーに簡単に質問できる気軽なQ&amp;Aサービスです。110言語以上が対応しています。' name='twitter:description'>
+<meta content='https://d1gnxku736h7az.cloudfront.net/assets/ogp-99f16c9269f60733f36978d6dd47ab0ee648e6e0ef54fe45ecdc9166077d1318.png' name='twitter:image'>
+<link rel="stylesheet" media="all" href="https://d1gnxku736h7az.cloudfront.net/assets/application-11a390b094c2fa7c409d251b8484c7de6565ad354a42ee9d8aa4256f3b8a7153.css" data-turbolinks-track="true" />
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="rLvvclOdO93w7anRJ+Ter4tep5nsMwUOKf/2UwfArVV53SNm9p7JaYeYielSzyD7Nnz0lNhA8XXu+Tk49Id8Dg==" />
+<link href='https://d1gnxku736h7az.cloudfront.net/assets/favicon-fa4c0f9ce5724648b68f4bda19a55736a8bf85c6bd3897116ca918ba95b87689.ico' rel='shortcut icon'>
+<link href='https://d1gnxku736h7az.cloudfront.net/assets/apple_touch_icon-e1456ac2e83da895d2dda00b3303b5e4b239f16091743258f4b0c37a920df3da.png' rel='apple-touch-icon-precomposed'>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-452011-21', { 'userId': "2405971" });
+  ga('set', 'page', '/after_login' + "/ja/questions/type");
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+<body>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+       google_ad_client: "ca-pub-6717840198266056",
+       enable_page_level_ads: true
+    });
+  </script>
+
+<div id='fb-root'></div>
+<nav class='navbar navbar-default navbar-fixed-top' id='navbar_body_ft' ng_class="{'js-no_banner': noBanner}" ng_cloak ng_controller='GlobalNavCtrl' ng_init='unreadActivitySize = 1; noBanner = true'>
+<div class='container_nav' id='js-nav_has_height'>
+<div class='flex flex_between'>
+<ul class='nav flex_center'>
+<li class='nav_home' ng_class='{ "active":isCurrent("home") }'>
+<a href="https://hinative.com/ja"><span class='icon-home'></span>
+<span class='txt'>ホーム</span>
+</a></li>
+<li class='nav_activity' ng_class='{ "active":isCurrent("activity")}'>
+<a href="/ja/activities"><span activity_balloon class='icon-activity'></span>
+<span class='txt'>通知</span>
+</a></li>
+<li class='question_center_bt l03' ng_class='{ "active":isCurrent("ask")}'>
+<a href="/ja/questions/type"><p>
+<span class='txt'>質問</span>
+</p>
+</a></li>
+<li class='nav_profile spec_nav_profile' ng_class='{ "active":isCurrent("profile") }'>
+<a href="/ja/profiles/2405971"><span class='icon-user'></span>
+<span class='txt'>プロフィール</span>
+</a></li>
+<li class='nav_settings spec_nav_settings' ng_class='{ "active":isCurrent("setting") }'>
+<a href="/ja/setting"><span class='icon-setting'></span>
+<span class='txt'>設定</span>
+</a></li>
+</ul>
+<ul class='nav flex_center' id='nav_for_PC'>
+<li class='button_user'>
+<button aria-expanded='true' aria-haspopup='true' class='js-activated btn-switch dropdown-toggle bd_none' data-hover='dropdown' data-toggle='dropdown' id='dropdownMenuPageUser' type='button'>
+<img src="https://d17ese100x1uvo.cloudfront.net/photos/2402739/ddaf63e97c6d1cf5e7d4c8b64f3c02abc1056a39/thumb.jpg?1524829450" alt="Thumb" />
+</button>
+<ul aria-labelledby='dropdownMenuPageUser' class='dropdown-menu dropdown-menu-right js-activated'>
+<li class='spec_nav_profile'>
+<a href="/ja/profiles/2405971"><i class='icon-user'></i>
+プロフィール
+</a></li>
+<li class='spec_nav_settings'>
+<a href="/ja/setting"><i class='icon-setting'></i>
+設定
+</a></li>
+<li>
+<a class="" rel="nofollow" data-method="delete" href="/users/sign_out"><i class='icon-logout'></i>
+ログアウト
+</a></li>
+</ul>
+</li>
+<li class='btn_ask'>
+<a class="btn btn-primary btn-square" href="/ja/questions/type"><span class='icon-ask'></span>
+質問
+</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<div class='parentbody' id='questions_type'>
+<div class='container js-wrapper' data-unread-activity-size='1' data-user-id='2405971' id='wrap'></div>
+<div id='flash_message'>
+</div>
+
+<div class='page_container'>
+<div class='parentblock'>
+<a class='banner_premium bookmark on_content' href='/ja/premium' target='_blank'>
+<div class='banner_premium_content'>
+<div class='ribbon_corner_wrapper'>
+<p class='ribbon_corner'>
+<span>
+SALE
+</span>
+</p>
+</div>
+<div class='row middle-xs'>
+<div class='image_premium_box'>
+<div class='image_premium mt_0'>
+<i></i>
+</div>
+</div>
+<div class='banner_title'>
+ブックマーク機能でより快適に質問を管理
+</div>
+<i class='icon-ar_right'></i>
+</div>
+</div>
+</a>
+
+<div class='feedback_wrap'>
+<div id='navi_container'></div>
+<a class='feedback_modal' data-target='#feedback_modal' data-toggle='modal' href='#feedback_modal'>
+<i class='icon icon-help'></i>
+お困りですか？
+</a>
+<div aria-labelledby='feedback_modal_label' class='modal fade' id='feedback_modal' role='dialog' tabindex='-1'>
+<div class='modal-dialog' role='document'>
+<div class='close_button_wrapper'>
+<a class='btn_close_circle' data-dismiss='modal'></a>
+</div>
+<div class='modal-content feedback_wrapper'>
+<div class='modal-body'>
+<p class='note'>
+HiNativeをご利用の上でわからないことはありますか？
+<div class='list-group'>
+<a class="list-group-item" href="/ja/questions/type"><span class='issue'>
+質問がしたい
+</span>
+</a><a aria-controls='answer_help' aria-expanded='false' class='list-group-item' data-parent='#accordion' data-toggle='collapse' href='#answer_help' role='button'>
+<span class='issue'>
+回答がしたい
+</span>
+<div aria-labelledby='answer_help' class='panel-collapse collapse' id='answer_help' role='tabpanel'>
+<div class='panel-body'>
+<p class='note mb_20 mt_20'>
+<span class='issue'>
+質問詳細ページの下部に回答があります。そこから回答してみましょう。
+</span>
+</p>
+<img alt='' class='img_responsible' src='https://d1gnxku736h7az.cloudfront.net/assets/sc_answerform-6183deeed20dd56cb33976bdf59332fb9d513710b7f733ff9b3acca5336c6f38.jpg'>
+</div>
+</div>
+</a>
+<a class='list-group-item js-linkto_modal'>
+<span class='issue'>
+使い方を知りたい
+</span>
+</a>
+</div>
+<div class='list-group'>
+<a class="list-group-item item_single" target="_blank" href="https://hinative.helpshift.com/a/hinative/?l=ja">その他（HiNative ヘルプページに飛びます）
+<i class='icon-subwin'></i>
+</a></div>
+</p>
+<div class='feedback_block' ng_class='{"feedback_block_thanks":isSent, "feedback_block":!isSent}' ng_controller='FeedbackCtrl'>
+<div class='collapsible' ng_show='!isSent'>
+<div class='page_collapsible' ng_class='{ "collapse-close":isClosed, "collapse-open":!isClosed }'>
+<div class='mail feedback_heading' ng_cloak>
+<div ng_class='{"feedback_heading_thanks":isSent, "formheading":!isSent }' ng_click='toggle()'>
+<span class='issue'>
+<i class='icon-help'></i>
+問題を報告・その他のお問い合わせ
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class='feedback_form' ng_cloak ng_show='!isClosed'>
+<ul>
+<li>
+<form id="feedback-form" class="" ng_submit="submit()" action="/ja/feedbacks" accept-charset="UTF-8" data-remote="true" method="post">
+<div class='w100 pb_10'>
+<div class='mb_10 mt_10'>
+<p class='mb_10'>
+お問い合わせ内容を教えてください。
+</p>
+<div class='select_body select_large select_icon_arrow_line_bottom'>
+<select name="type" id="type"><option value="Bug report">バグ報告</option>
+<option value="Suggestion">提案</option>
+<option value="Premium">プレミアム会員について</option>
+<option value="HiNative Trek">HiNative Trekについて</option>
+<option value="Other">その他</option></select>
+</div>
+</div>
+<div class='mb_10'>
+<textarea name="feedback" id="auto-resize-area" placeholder="ご用件は何でしょうか？" maxlength="1000" class="text-fields d_bloc" ng_model="content">
+</textarea>
+</div>
+<div class='mb_10 note_bg'>
+営業日以外（土・日・日本の祝日・年末年始）にいただきましたお問い合わせは、翌営業日以降のご回答となりますのでご了承ください。<br>お問い合わせの内容によりましては、お返事にしばらくお時間を頂戴する場合や回答を致しかねる場合がございます。
+</div>
+<div class='text-right'>
+<input type="submit" name="commit" value="送る" class="btn btn-square" ng_class="{ &quot;btn-disabled&quot;:!submittable(), &quot;btn-primary&quot;:submittable() }" ng_disabled="!submittable()" />
+</div>
+</div>
+</form>
+
+</li>
+</ul>
+</div>
+<div class='feedback_thanks_wrap' ng_cloak ng_show='isSent'>
+<div class='feedback_thanks_block'>
+<div class='balloon_thanks'>
+ご意見ありがとうございました。
+</div>
+<div class='mt_10 note_bg'>
+営業日以外（土・日・日本の祝日・年末年始）にいただきましたお問い合わせは、翌営業日以降のご回答となりますのでご了承ください。<br>お問い合わせの内容によりましては、お返事にしばらくお時間を頂戴する場合や回答を致しかねる場合がございます。
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='main'>
+<section class='section section_with_padding section_setting'>
+<h1 class='bd_none'>質問テンプレートを選ぼう！</h1>
+<h2>発音について質問したい</h2>
+<ul class='list-group list-group_link'>
+<li class='list-group-item type_my_pronounce'>
+<a class="d_box" href="/ja/questions/new?type=MyPronounceQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_my_pronounce fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>この発音は自然ですか？</span>
+<span class='t_small'>私の発音は自然ですか？あなたの発音を聞かせてください。</span>
+</div>
+</a></li>
+<li class='list-group-item type_you_pronounce'>
+<a class="d_box" href="/ja/questions/new?type=YouPronounceQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_you_pronounce fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>~~の発音を音声で教えてください</span>
+<span class='t_small'>あなたの~~の発音が聞きたいです。</span>
+</div>
+</a></li>
+</ul>
+<h2>単語・センテンスについて質問したい</h2>
+<ul class='list-group list-group_link'>
+<li class='list-group-item type_what'>
+<a class="d_box" href="/ja/questions/new?type=WhatsayQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_what fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>なんて言うの？</span>
+<span class='t_small'>~~は○○語で何と言いますか？</span>
+</div>
+</a></li>
+<li class='list-group-item type_which'>
+<a class="d_box" href="/ja/questions/new?type=ChoiceQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_which fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>この表現は自然ですか？</span>
+</div>
+</a></li>
+<li class='list-group-item type_example'>
+<a class="d_box" href="/ja/questions/new?type=ExampleQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_example fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>例文を教えてください</span>
+<span class='t_small'>~~ を使った例文を教えてください。<br> 出来るだけ日常で使う自然な表現でお願いします。</span>
+</div>
+</a></li>
+<li class='list-group-item type_mean'>
+<a class="d_box" href="/ja/questions/new?type=MeaningQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_mean fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>意味を教えてください</span>
+<span class='t_small'>~~ とはどういう意味ですか?</span>
+</div>
+</a></li>
+<li class='list-group-item type_how'>
+<a class="d_box" href="/ja/questions/new?type=DifferenceQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_how fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>どうちがうの？</span>
+<span class='t_small'>AとBではどう違いますか？例文も教えてください。</span>
+</div>
+</a></li>
+<li class='list-group-item type_language'>
+<a class="d_box" href="/ja/questions/new?type=FreeQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-language fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>自由に質問したい</span>
+</div>
+</a></li>
+</ul>
+<h2>気になる国や地域について質問したい</h2>
+<ul class='list-group list-group_link'>
+<li class='list-group-item type_country'>
+<a class="d_box" href="/ja/questions/new?type=CountryQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-earth fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>気になる国や地域について質問したい</span>
+</div>
+</a></li>
+</ul>
+</section>
+
+</div>
+</div>
+<aside class='sidebar'>
+<!-- /TREK signupの時横にログインサイドバー灰色 -->
+<div class='banner_ad banner_ad_sidebar banner_ad_a_block'>
+<a href='https://trek.hinative.com/ja?source=hinative_side_banner&amp;tracking_code=bn_trek_sekiya' target='_blank'>
+<img data-echo="https://d1gnxku736h7az.cloudfront.net/assets/translated_banner/jp/bn_trek_sekiya@2x-60bc6a1b9dde213c88c25387e0e11270913ffab7229f83885b7d0492df40ff94.jpg" src="" />
+</a>
+</div>
+
+<div class='banner_ad banner_ad_sidebar banner_ad_a_block'>
+<a class='banner_premium feed on_sidebar' href='/ja/premium' target='_blank'>
+<div class='text-right'>
+<div class='image_monga'>
+<img class="monga_nuts" alt="モンガ様" src="https://d1gnxku736h7az.cloudfront.net/assets/premium_banner/monga_nuts@2x-309883d5ba63b498c7976ae66559e35e99d632fc6fa57e6d63f8cf12cff99428.png" />
+<img class="hand" alt="モンガ様 hand" src="https://d1gnxku736h7az.cloudfront.net/assets/premium_banner/monga_otete@2x-f294544c8204c14225e4921c7d28413a34c393939e86dbda4715372503bb61fc.png" />
+</div>
+</div>
+<div class='banner_premium_content'>
+<div class='ribbon_corner_wrapper'>
+<p class='ribbon_corner'>
+<span>
+SALE
+</span>
+</p>
+</div>
+<div class='row start-xs'>
+<div class='image_premium_box'>
+<div class='image_premium'>
+<i></i>
+</div>
+</div>
+<div class='banner_title'>
+優先表示機能でより早く回答をゲット
+</div>
+</div>
+<div class='premium_btn_arrow'>
+<span>
+プレミアム会員の詳細へ
+</span>
+<i class='icon-ar_right'></i>
+</div>
+</div>
+</a>
+</div>
+
+</aside>
+</div>
+</div>
+<div id='loading'></div>
+
+<div aria-hidden='true' aria-labelledby='login_require_modal_label' class='modal fade' id='login_require_modal' role='dialog' tabindex='-1'>
+<div class='modal-dialog modal-dialog_content_center'>
+<div class='close_button_wrapper'>
+<a class='btn_close_circle' data-dismiss='modal'></a>
+</div>
+<div class='modal-content'>
+<div class='al_center'>
+<p class='mb_20'>
+ログインが必要です
+</p>
+</div>
+<ul class='parallel_arrangement row middle-xs'>
+<li class='col-xs al_center'>
+<a class="btn btn-default" rel="nofollow" href="/ja/users/sign_in">ログイン</a>
+</li>
+<li class='col-xs al_center'>
+<a class="btn btn-submit" rel="nofollow" href="/ja/users/sign_up">新規登録</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id='loading_overlay'>
+<div class='indicator'></div>
+</div>
+
+<script src="https://d1gnxku736h7az.cloudfront.net/assets/application-0964bea776e7ebbd6cf2592101600a4cc8838f1eaff9eaf29a791abdf3606c53.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
+<script>
+//<![CDATA[
+new I18n([{"key":"common.featured_answer","value":"最も役に立った回答"},{"key":"common.new_comment","value":"common.new_comment"},{"key":"common.done_editing","value":"編集を保存"},{"key":"common.cancel","value":"キャンセル"},{"key":"common.confirm","value":"本当によろしいですか？"},{"key":"common.audiopause","value":"マイクボタンを押すと録音が開始します。"},{"key":"common.audiorecording","value":"録音中..."},{"key":"common.disagree_answer","value":"「ちがうかも？」しますか？"},{"key":"questions_show.sending","value":"送信中…"},{"key":"questions_show.close","value":"質問を終了する"},{"key":"questions_show.re-open","value":"質問を再開する"},{"key":"questions_show.closed_question","value":"終了した質問"},{"key":"questions_show.confirm_featured_answer","value":"この回答が最も役に立ったということで、よろしいですか？"},{"key":"questions_show.subscribe","value":"通知を受け取る"},{"key":"questions_show.unsubscribe","value":"通知を無効にする"},{"key":"profiles_search_bookmarks.title","value":"__name__ さんのブックマーク一覧"},{"key":"profiles_search_bookmarks.placeholder","value":"自分のブックマークを検索"},{"key":"profiles_search_questions.title","value":"__name__ さんの質問一覧"},{"key":"profiles_search_questions.placeholder","value":"自分の質問を検索"},{"key":"flash_messages.answers_featured","value":"最も役に立った回答を選びました。"},{"key":"flash_messages.answers_disagree","value":"「ちがうかも？」しました。"},{"key":"flash_messages.answers_like","value":"いいね！しました。"},{"key":"flash_messages.audio_created","value":"音声をアップロードしました。"},{"key":"flash_messages.audio_destroyed","value":"音声が削除されました"},{"key":"flash_messages.image_created","value":"写真が設定されました"},{"key":"flash_messages.image_destroyed","value":"写真が削除されました"},{"key":"flash_messages.bookmarked","value":"ブックマークしました。"},{"key":"flash_messages.unbookmarked","value":"ブックマークを解除しました。"},{"key":"flash_messages.questions_choice","value":"回答しました"},{"key":"flash_messages.questions_close_closed","value":"質問を終了しました"},{"key":"flash_messages.questions_close_opened","value":"質問を再開しました"},{"key":"flash_messages.reports_create","value":"通報ありがとうございました"},{"key":"flash_messages.duplicated_spam_flag","value":"既にスパム報告済みです。"},{"key":"flash_messages.dropfile_invalid_type","value":"ファイル形式が画像、もしくは音声ではありません。PNG, GIF, JPG, WMA, MP3のどれかの形式をアップロードして下さい。"},{"key":"questions_show.confirm_close_question","value":"質問を終了しますか？"},{"key":"questions_show.confirm_reopen_question","value":"質問を再開しますか？"},{"key":"validate.required","value":"入力してください。"},{"key":"validate.name_invalidate","value":"不正なユーザー名です。"},{"key":"validate.minlength","value":"__number__文字以上で入力してください。"},{"key":"validate.maxlength","value":"__number__文字以内で入力してください。"},{"key":"validate.equal_to","value":"パスワードが一致しません。"},{"key":"validate.email_format","value":"メールアドレスを入力してください。"},{"key":"validate.terms_of_use_required","value":"登録するには利用規約の同意にチェックを入れて下さい。"},{"key":"validate.team_invalidate","value":"不正なチームIDです。"},{"key":"landing_trek.valid_coupon","value":"landing_trek.valid_coupon"},{"key":"landing_trek.valid_coupon_jpy","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ 円/月\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_yearly_jpy","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ 円/年\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_usd","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ USD/月\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_yearly_usd","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ USD/年\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.invalid_coupon","value":"\u003cp class=\"alert alert-danger\"\u003eクーポンが見つかりませんでした。\u003c/p\u003e"},{"key":"timeago.prefixAgo","value":""},{"key":"timeago.prefixFromNow","value":"今から"},{"key":"timeago.ago","value":"前"},{"key":"timeago.from_now","value":"後"},{"key":"timeago.less_than_a_minute","value":"1 分未満"},{"key":"timeago.about_a_minute","value":"約 1 分"},{"key":"timeago.minutes","value":"%d 分"},{"key":"timeago.about_an_hour","value":"約 1 時間"},{"key":"timeago.about_hours","value":"約 %d 時間"},{"key":"timeago.a_day","value":"1 日"},{"key":"timeago.days","value":"%d 日"},{"key":"timeago.about_a_month","value":"約 1 ヶ月"},{"key":"timeago.months","value":"約 %d ヶ月"},{"key":"timeago.about_a_year","value":"約 1 年"},{"key":"timeago.years","value":"約 %d 年"}]);
+//]]>
+</script>
+</body>
+</html>
