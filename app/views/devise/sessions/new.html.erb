@@ -15,6 +15,9 @@
   </nav>
 </header>
 
+<div class="page-container">
+<div class="main">
+<div class="section">
 <h2>ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -36,8 +39,11 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", {class: "submit-btn"} %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
