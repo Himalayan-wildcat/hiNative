@@ -37,6 +37,7 @@ describe "User" do
       expect(user).to be_valid
     end
 
+    # nameカラムはまだ出来ていないため、仮
     # it "is invalid without a name" do
     #   user = User.new(email: "test1@gmail.com", password: 123)
     #   user.valid?
