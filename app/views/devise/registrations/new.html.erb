@@ -21,6 +21,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :categories_name %><br />
+    <%= f.select :list, [["旅行", "旅行"], ["飲食店", "飲食店"], ["交通", "交通"], ["病院", "病院"], ["学校", "学校"], ["その他", "その他"]] ,class:"form-control" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
