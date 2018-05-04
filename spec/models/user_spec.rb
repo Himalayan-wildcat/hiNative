@@ -20,24 +20,34 @@ RSpec.describe User, type: :model do
         expect(user).to be_valid
       end
 
+      it "is valid if name_length is equal to 12" do
+        user.name = Faker::Internet.user_name(12..12)
+        expect(user).to be_valid
+      end
+
+      it "is valid if name_length is equal to 11" do
+        user.name = Faker::Internet.user_name(11..11)
+        expect(user).to be_valid
+      end
+
     end
     context "cannot save" do
       it "is invalid if not having uniqe email" do
         another_user = build(:user , email: user.email)
         another_user.valid?
-        expect(another_user.errors[:email]).to include("Watch out!! it already exists")
+        expect(another_user.errors[:email]).to include("already exists. Watch out!!")
       end
 
       it "is invalid without a password" do
         user = build(:user, password: nil)
         user.valid?
-        expect(user.errors[:password]).to include("You need to fill it")
+        expect(user.errors[:password]).to include("is blank. You need to fill it.")
       end
 
       it "is invalid without a email" do
         user = build(:user, email: "")
         user.valid?
-        expect(user.errors[:email]).to include("You need to fill it")
+        expect(user.errors[:email]).to include("is blank. You need to fill it.")
       end
 
       it "is invalid if password doesn't match password_confirmation" do
@@ -47,31 +57,30 @@ RSpec.describe User, type: :model do
       end
 
       it "is invalid if password_length is equal to 5" do
-        user.password = Faker::Internet.password(0, 5)
+        user.password = Faker::Internet.password(1, 5)
         user.password_confirmation = user.password
         user.valid?
         expect(user.errors[:password][0]).to include("too short")
       end
 
-      # nameカラムはまだ出来ていないため、仮
-      # it "is invalid without a name" do
-      #   user = User.new(email: "test1@gmail.com", password: 123)
-      #   user.valid?
-      #   expect(user.errors[:name]).to include("can't be blank")
-      # end
+      it "is invalid without a name" do
+        user.name = nil
+        user.valid?
+        expect(user.errors[:name]).to include("is blank. You need to fill it.")
+      end
 
-      # it "is invalid if name_length is over 13" do
-      #   user = User.new(name: "abcdefghijlk")
-      #   user.valid?
-      #   expect(user.errors[:name][0]).to include("too long")
-      # end
+      it "is invalid if name_length is equal to 13" do
+        user.name = Faker::Internet.user_name(13..13)
+        user.valid?
+        expect(user.errors[:name][0]).to include("too long")
+      end
 
-      # it "is invalid if name_length is not unique" do
-      #   user = User.create(name: "abcd")
-      #   another_user = build(:user, name: "abcd")
-      #   another_user.valid?
-      #   expect(another_user.errors[:name]).to include("what the hell are you thinking? it already exists")
-      # end
+      it "is invalid if name_length is not unique" do
+        another_user = build(:user)
+        another_user = build(:user, name: user.name)
+        another_user.valid?
+        expect(another_user.errors[:name]).to include("already exists. Watch out!!")
+      end
 
     end
   end
