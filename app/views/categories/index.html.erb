@@ -88,7 +88,7 @@
 <div class='flex flex_between'>
 <ul class='nav flex_center'>
 <li class='nav_home' ng_class='{ "active":isCurrent("home") }'>
-<a href="https://hinative.com/ja"><span class='icon-home'></span>
+<a href="/"><span class='icon-home'></span>
 <span class='txt'>ホーム</span>
 </a></li>
 <li class='nav_activity' ng_class='{ "active":isCurrent("activity")}'>
@@ -142,32 +142,84 @@
 <div class='container js-wrapper' data-unread-activity-size='1' data-user-id='2405971' id='wrap'></div>
 <div id='flash_message'>
 </div>
-
-<div class='page_container'>
-<div class='parentblock'>
-<a class='banner_premium bookmark on_content' href='/ja/premium' target='_blank'>
-<div class='banner_premium_content'>
-<div class='ribbon_corner_wrapper'>
-<p class='ribbon_corner'>
-<span>
-SALE
-</span>
-</p>
-</div>
-<div class='row middle-xs'>
-<div class='image_premium_box'>
-<div class='image_premium mt_0'>
-<i></i>
+<section class='section section_with_padding section_setting'>
+<h1 class='bd_none'>カテゴリーを選ぼう！</h1>
+<a class="d_box" href="/ja/questions/new?type=YouPronounceQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_you_pronounce fontlistico'></span>
 </div>
 </div>
-<div class='banner_title'>
-ブックマーク機能でより快適に質問を管理
+</a></li>
+</ul>
+<h2>場面、状況別に質問を探す</h2>
+<ul class='list-group list-group_link'>
+<li class='list-group-item type_what'>
+<a class="d_box" href="/ja/questions/new?type=WhatsayQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_what fontlistico'></span>
 </div>
-<i class='icon-ar_right'></i>
+</div>
+<div class='box_flex'>
+<span>なんて言うの？</span>
+<span class='t_small'>飲食店・デパート編〜</span>
+</div>
+</a></li>
+<li class='list-group-item type_which'>
+<a class="d_box" href="/ja/questions/new?type=ChoiceQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_which fontlistico'></span>
 </div>
 </div>
-</a>
-
+<div class='box_flex'>
+<span>この表現は自然ですか？</span>
+</div>
+</a></li>
+<li class='list-group-item type_example'>
+<a class="d_box" href="/ja/questions/new?type=ExampleQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_example fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>例文を教えてください</span>
+<span class='t_small'>~~ を使った例文を教えてください。<br> 出来るだけ日常で使う自然な表現でお願いします。</span>
+</div>
+</a></li>
+<li class='list-group-item type_mean'>
+<a class="d_box" href="/ja/questions/new?type=MeaningQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_mean fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>意味を教えてください</span>
+<span class='t_small'>~~ とはどういう意味ですか?</span>
+</div>
+</a></li>
+<li class='list-group-item type_how'>
+<a class="d_box" href="/ja/questions/new?type=DifferenceQuestion"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-question_how fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>どうちがうの？</span>
+<span class='t_small'>AとBではどう違いますか？例文も教えてください。</span>
+</div>
+</a></li>
+<h2>自由に質問がしたい</h2>
+<ul class='list-group list-group_link'>
+<li class='list-group-item type_country'>
+<a class="d_box" href="/chats"><div class='box_flex0'>
+<div class='circle'>
+<span class='icon-earth fontlistico'></span>
+</div>
+</div>
+<div class='box_flex'>
+<span>(仮)トレーナーに質問をする → チャット画面に移動</span>
+</div>
+</a></li>
+</ul>
 <div class='feedback_wrap'>
 <div id='navi_container'></div>
 <a class='feedback_modal' data-target='#feedback_modal' data-toggle='modal' href='#feedback_modal'>
@@ -185,11 +237,11 @@ SALE
 HiNativeをご利用の上でわからないことはありますか？
 <div class='list-group'>
 <a class="list-group-item" href="/ja/questions/type"><span class='issue'>
-質問がしたい
+カテゴリーの使い方を知りたい
 </span>
 </a><a aria-controls='answer_help' aria-expanded='false' class='list-group-item' data-parent='#accordion' data-toggle='collapse' href='#answer_help' role='button'>
 <span class='issue'>
-回答がしたい
+カテゴリーに無い質問をしたい
 </span>
 <div aria-labelledby='answer_help' class='panel-collapse collapse' id='answer_help' role='tabpanel'>
 <div class='panel-body'>
@@ -238,8 +290,6 @@ HiNativeをご利用の上でわからないことはありますか？
 <div class='select_body select_large select_icon_arrow_line_bottom'>
 <select name="type" id="type"><option value="Bug report">バグ報告</option>
 <option value="Suggestion">提案</option>
-<option value="Premium">プレミアム会員について</option>
-<option value="HiNative Trek">HiNative Trekについて</option>
 <option value="Other">その他</option></select>
 </div>
 </div>
@@ -276,101 +326,12 @@ HiNativeをご利用の上でわからないことはありますか？
 </div>
 
 </div>
-<div class='main'>
-<section class='section section_with_padding section_setting'>
-<h1 class='bd_none'>カテゴリーを選ぼう！</h1>
-<a class="d_box" href="/ja/questions/new?type=YouPronounceQuestion"><div class='box_flex0'>
-<div class='circle'>
-<span class='icon-question_you_pronounce fontlistico'></span>
-</div>
-</div>
-</a></li>
-</ul>
-<h2>単語・センテンスについて質問したい</h2>
-<ul class='list-group list-group_link'>
-<li class='list-group-item type_what'>
-<a class="d_box" href="/ja/questions/new?type=WhatsayQuestion"><div class='box_flex0'>
-<div class='circle'>
-<span class='icon-question_what fontlistico'></span>
-</div>
-</div>
-<div class='box_flex'>
-<span>なんて言うの？</span>
-<span class='t_small'>~~は○○語で何と言いますか？</span>
-</div>
-</a></li>
-<li class='list-group-item type_which'>
-<a class="d_box" href="/ja/questions/new?type=ChoiceQuestion"><div class='box_flex0'>
-<div class='circle'>
-<span class='icon-question_which fontlistico'></span>
-</div>
-</div>
-<div class='box_flex'>
-<span>この表現は自然ですか？</span>
-</div>
-</a></li>
-<li class='list-group-item type_example'>
-<a class="d_box" href="/ja/questions/new?type=ExampleQuestion"><div class='box_flex0'>
-<div class='circle'>
-<span class='icon-question_example fontlistico'></span>
-</div>
-</div>
-<div class='box_flex'>
-<span>例文を教えてください</span>
-<span class='t_small'>~~ を使った例文を教えてください。<br> 出来るだけ日常で使う自然な表現でお願いします。</span>
-</div>
-</a></li>
-<li class='list-group-item type_mean'>
-<a class="d_box" href="/ja/questions/new?type=MeaningQuestion"><div class='box_flex0'>
-<div class='circle'>
-<span class='icon-question_mean fontlistico'></span>
-</div>
-</div>
-<div class='box_flex'>
-<span>意味を教えてください</span>
-<span class='t_small'>~~ とはどういう意味ですか?</span>
-</div>
-</a></li>
-<li class='list-group-item type_how'>
-<a class="d_box" href="/ja/questions/new?type=DifferenceQuestion"><div class='box_flex0'>
-<div class='circle'>
-<span class='icon-question_how fontlistico'></span>
-</div>
-</div>
-<div class='box_flex'>
-<span>どうちがうの？</span>
-<span class='t_small'>AとBではどう違いますか？例文も教えてください。</span>
-</div>
-</a></li>
-<li class='list-group-item type_language'>
-<a class="d_box" href="/ja/questions/new?type=FreeQuestion"><div class='box_flex0'>
-<div class='circle'>
-<span class='icon-language fontlistico'></span>
-</div>
-</div>
-<div class='box_flex'>
-<span>自由に質問したい</span>
-</div>
-</a></li>
-</ul>
-<h2>トレーナーに質問をする</h2>
-<ul class='list-group list-group_link'>
-<li class='list-group-item type_country'>
-<a class="d_box" href="/chats"><div class='box_flex0'>
-<div class='circle'>
-<span class='icon-earth fontlistico'></span>
-</div>
-</div>
-<div class='box_flex'>
-<span>チャット画面に移動（仮）</span>
-</div>
-</a></li>
-</ul>
 </section>
 
 </div>
-</div>
 <aside class='sidebar'>
+
+
 <!-- /TREK signupの時横にログインサイドバー灰色 -->
 
 
