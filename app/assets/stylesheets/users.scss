@@ -1,3 +1,70 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#form5{
+position: relative;
+padding:38px;
+}
+#sbox5{
+outline: 0;
+height: 50px;
+padding: 0 10px;
+position: absolute;
+left: 0;
+top: 0;
+width: 500px!important;
+border-radius:5px;
+border:solid 2px #eaeaea;
+outline: 0;
+}
+#sbtn5{
+padding: 0;
+width: 70px;
+height: 50px;
+position: absolute;
+left: 510px;
+top: 0;
+border-radius:5px;
+background: black;
+color:#fff;
+border:solid 2px #eaeaea;
+font-weight:bold;
+font-size:16px;
+outline: 0;
+}
+#sbtn5:hover{
+background: #FF4E00;
+color: white;
+}
+// -------------------------------
+
+.profile-wrapper {
+  padding-top: 30px;
+  height: 100%;
+  width: 620px;
+  margin: 0 auto;
+}
+
+.profile_img_wrapper {
+  width: 620;
+  margin-bottom: 15px;
+}
+
+.profile_img {
+    float: left;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.name_box {
+  clear: both;
+  float: left;
+  padding-left: 20px;
+  height: 100px;
+}
+.user_name {
+  font-size: 24px;
+  padding-top: 28px;
+  padding-bottom: 10px;
+}
+
