@@ -4,6 +4,9 @@ html {
 body {
   height: 100%;
 }
+.navbar {
+  display: block !important;
+}
 .hidden {
   display: none;
 }
@@ -87,4 +90,10 @@ body {
     border-radius: 5px;
 }
 
-
+@media (max-width: 768px) {
+.form__textArea {
+  input {
+    width: 68% !important;
+  }
+}
+  }
