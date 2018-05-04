@@ -1,2 +1,7 @@
 <h1>メッセージのやり取りのビュー</h1>
-a
+
+<%= form_for @chat do |f| %>
+  <%= f.text_field :text %>
+  <br>
+  <%= f.submit "送信" %>
+<% end %>
