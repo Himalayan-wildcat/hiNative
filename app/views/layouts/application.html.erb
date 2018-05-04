@@ -45,7 +45,8 @@
   </head>
 
   <body>
-    <div id='fb-root'></div>
+<% if user_signed_in? %>
+<div id='fb-root'></div>
 <nav class='navbar navbar-default navbar-fixed-top' id='navbar_body_ft' ng_class="{'js-no_banner': noBanner}" ng_cloak ng_controller='GlobalNavCtrl' ng_init='unreadActivitySize = 1; noBanner = true'>
 <div class='container_nav' id='js-nav_has_height'>
 <div class='flex flex_between'>
@@ -106,6 +107,7 @@
 </div>
 </div>
 </nav>
+<% end %>
 
 <div class='parentbody' id='questions_type'>
 <div class='container js-wrapper' data-unread-activity-size='1' data-user-id='2405971' id='wrap'></div>
