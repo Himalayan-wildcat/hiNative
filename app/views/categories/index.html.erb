@@ -63,16 +63,16 @@
 <span class='txt'>通知</span>
 </a></li>
 <li class='question_center_bt l03' ng_class='{ "active":isCurrent("ask")}'>
-<a href="/ja/questions/type"><p>
+<a href="/ja/chats"><p>
 <span class='txt'>質問</span>
 </p>
 </a></li>
 <li class='nav_profile spec_nav_profile' ng_class='{ "active":isCurrent("profile") }'>
-<a href="/ja/profiles/2405971"><span class='icon-user'></span>
+<a href="/ja/profiles/#{current_user.id}"><span class='icon-user'></span>
 <span class='txt'>プロフィール</span>
 </a></li>
 <li class='nav_settings spec_nav_settings' ng_class='{ "active":isCurrent("setting") }'>
-<a href="/ja/setting"><span class='icon-setting'></span>
+<a href="/ja/settings"><span class='icon-setting'></span>
 <span class='txt'>設定</span>
 </a></li>
 </ul>
@@ -83,11 +83,11 @@
 </button>
 <ul aria-labelledby='dropdownMenuPageUser' class='dropdown-menu dropdown-menu-right js-activated'>
 <li class='spec_nav_profile'>
-<a href="/ja/profiles/2405971"><i class='icon-user'></i>
+<a href="/ja/users/profile/#{current_user.id}"><i class='icon-user'></i>
 プロフィール
 </a></li>
 <li class='spec_nav_settings'>
-<a href="/ja/index"><i class='icon-setting'></i>
+<a href="/ja/settings"><i class='icon-setting'></i>
 設定
 </a></li>
 <li>
@@ -127,8 +127,7 @@
 </div>
 </div>
 <div class='box_flex'>
-<span>なんて言うの？</span>
-<span class='t_small'>飲食店・デパート編〜</span>
+<span>飲食店で使えるフレーズ</span>
 </div>
 </a></li>
 <li class='list-group-item type_which'>
@@ -138,7 +137,7 @@
 </div>
 </div>
 <div class='box_flex'>
-<span>この表現は自然ですか？</span>
+<span>交通機関で使えるフレーズ</span>
 </div>
 </a></li>
 <li class='list-group-item type_example'>
@@ -148,8 +147,7 @@
 </div>
 </div>
 <div class='box_flex'>
-<span>例文を教えてください</span>
-<span class='t_small'>~~ を使った例文を教えてください。<br> 出来るだけ日常で使う自然な表現でお願いします。</span>
+<span>病院で使える表現</span>
 </div>
 </a></li>
 <li class='list-group-item type_mean'>
@@ -159,8 +157,8 @@
 </div>
 </div>
 <div class='box_flex'>
-<span>意味を教えてください</span>
-<span class='t_small'>~~ とはどういう意味ですか?</span>
+<span>日常会話編〜</span>
+<span class='t_small'>よくつかわれるフレーズ?</span>
 </div>
 </a></li>
 <li class='list-group-item type_how'>
