@@ -30,4 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    errors:
+      messages:
+        blank: "is blank. You need to fill it."
+        taken: "already exists. Watch out!!"
   hello: "Hello world"
