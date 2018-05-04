@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "tops#index"
-  resources :categories, path: '/ja'
+  resources :categories, path: '/ja', only: :index
   resources :chats
-
+  resources :users, except: [:new, :create], path: '/ja/users/profiles'
+  resource  :settings, except: [:new, :create], path: 'ja/settings'
 end

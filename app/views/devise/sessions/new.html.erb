@@ -15,17 +15,28 @@
   </nav>
 </header>
 
+<div class="page-container">
+<div class="main">
+<div class="section">
 <h2>ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
+    <div class="field-label">
     <%= f.label :メールアドレス %><br />
+    </div>
+    <div class="field-input">
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
   </div>
 
   <div class="field">
+    <div class="field-label">
     <%= f.label :パスワード %><br />
+    </div>
+    <div class="field-input">
     <%= f.password_field :password, autocomplete: "off" %>
+    </div>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -36,8 +47,11 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", {class: "submit-btn"} %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
