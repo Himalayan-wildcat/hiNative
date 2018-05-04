@@ -1,3 +1,82 @@
-// Place all the styles related to the questions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+.hidden {
+  display: none;
+}
+.chats_main {
+  overflow: hidden;
+  height: calc(100% - 50px);
+  p {
+    border-bottom: 1px solid #ddd;
+    padding: 5% 0 5% 10%;
+  }
+  .chats_main_inner {
+    width: 80%;
+    margin: 0 auto;
+    height: calc(100% - 200px);
+  }
+
+}
+.message {
+  .messages {
+    padding: 25px 0 0 0px;
+    margin-bottom: 40px;
+    .messages__list {
+      list-style-type: none;
+      margin-bottom:5px;
+      .messages__date {
+        font-size: 14px;
+        margin-left: 5px;
+        color: gray;
+      }
+      .messages__list__message {
+        font-size: 15px;
+      }
+    }
+  }
+}
+.form {
+  border-top: 1px solid #ddd;
+  padding-top: 9px;
+  height: 50px;
+  &__inner {
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.form__textArea {
+  border: 1px solid #000;
+  width: 75%;
+  border-radius: 5px;
+  float:left;
+  input {
+    border: none !important;
+    width:86% !important;
+  }
+}
+.form__mask {
+  display: inline;
+  label {
+    i {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+  }
+}
+.submitBtn {
+    display: block;
+    height: 43px;
+    background-color: #000;
+    color: white;
+    width: 17%;
+    margin-left: 1%;
+    float: left;
+    border-radius: 5px;
+}
+
+
