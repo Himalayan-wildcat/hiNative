@@ -1,7 +1,13 @@
 <h1>メッセージのやり取りのビュー</h1>
 
 <%= form_for @chat do |f| %>
-  <%= f.text_field :text %>
+  <%= f.text_field :text , data: { behavior: "chat_room" } %>
   <br>
-  <%= f.submit "送信" %>
+  <!-- <%= f.submit "送信" %> -->
 <% end %>
+
+<div class="chat-table">
+  <% @chats.each do |chat| %>
+    <%= chat.text %><br>
+  <% end %>
+</div>
