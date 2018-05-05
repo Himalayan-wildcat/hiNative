@@ -11,7 +11,7 @@ class ChatChannel < ApplicationCable::Channel
 
   def speak(data)
     # binding.pry
-    Chat.create(text: data['message'], user_id: 1)
+    chat = Chat.create(text: data['message'], user_id: 1)
     ActionCable.server.broadcast 'chat_channel', message: data['message']
   end
 end

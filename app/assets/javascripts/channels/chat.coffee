@@ -4,8 +4,7 @@
     disconnected: ->
 
     received: (data) ->
-      $(".chat-table").append(data['message'])
-      alert data['message']
+      $(".message-box").append(data['message'])
 
     speak: (message) ->
       @perform 'speak', message: message
@@ -16,7 +15,7 @@
     #   App.chat.speak e.target.value
     #   e.target.value = ''
     #   e.preventDefault()
-
+    #
     # $("#new_chat").on 'submit', (e) ->
     #     console.log("bb");
     #     App.chat.speak e.target.value
