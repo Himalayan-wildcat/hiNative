@@ -1,0 +1,58 @@
+%body
+  %header
+    #fb-root
+    %nav#navbar_body_ft.navbar.navbar-default.navbar_not_login
+      .container_nav.flex.flex_between
+        .nav_brand
+          %a{"data-no-turbolink" => "true", :href => "/"}
+            %i.icon-logo_type
+        .nav_listgroup
+          %ul.login_buttons.flex.flex_center
+            %li
+              %a.btn.btn_bordered_white.btn-mini.btn-square2.track{"data-action" => "click", "data-category" => "sign_in", "data-label" => "null", :href => "/users/sign_in", :rel => "nofollow"} ログイン
+            %li
+              %a.btn.btn-mini.btn-primary2.btn-square2{:href => "/users/sign_up"} 新規登録
+  .page-container
+    .main
+      .section
+        %h2 新規登録
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .field
+            .field-label
+              = f.label :ユーザー名
+              %br/
+            .field-input
+              = f.text_field :name, autofocus: true, autocomplete: "name"
+          .field
+            .field-label
+              = f.label :メールアドレス
+              %br/
+            .field-input
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+          .field
+            .field-label
+              = f.label :パスワード
+            .field-input
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} characters minimum)
+              %br/
+              = f.password_field :password, autocomplete: "off"
+          .field
+            .field-label
+              = f.label :パスワード（確認用）
+              %br/
+            .field-input
+              = f.password_field :password_confirmation, autocomplete: "off"
+          %p
+            %label{:for => "categories"} 興味のあるカテゴリーを選択してください：
+            %select#categories{:name => "categories"}
+              %option{:selected => "selected", :value => "旅行"} 旅行
+              %option{:value => "交通"} 交通
+              %option{:value => "飲食店"} 飲食店
+              %option{:value => "病院"} 病院
+              %option{:value => "学校"} 学校
+              %option{:value => "雑貨屋"} 雑貨屋
+          .actions
+            = f.submit "Sign up", {class: "submit-btn"}
