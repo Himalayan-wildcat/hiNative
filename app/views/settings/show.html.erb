@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang='ja'>
 <head>
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"240011c68f","applicationID":"11345295","transactionName":"Jg4MFRNdCllURU4WQQoHCw0EQUlGWVgW","queueTime":0,"applicationTime":154,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"240011c68f","applicationID":"11345295","transactionName":"Jg4MFRNdCllURU4VVhEVCw8GQUlGWVgW","queueTime":0,"applicationTime":172,"agent":""}</script>
 <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
-<title>takatee - プロフィール | HiNative</title>
-<link href='https://hinative.com/ja/profiles/2405971' rel='canonical'>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -13,10 +11,9 @@
    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-452011-21', { 'userId': "2405971" });
-  ga('set', 'page', '/after_login' + "/ja/profiles/2405971");
+  ga('set', 'page', '/after_login' + "/ja/setting");
   ga('send', 'pageview');
 </script>
-
 
 </head>
 <body>
@@ -58,7 +55,7 @@ HiNativeをご利用の上でわからないことはありますか？
 質問詳細ページの下部に回答があります。そこから回答してみましょう。
 </span>
 </p>
-<!-- <img alt='' class='img_responsible' src='https://d1gnxku736h7az.cloudfront.net/assets/sc_answerform-6183deeed20dd56cb33976bdf59332fb9d513710b7f733ff9b3acca5336c6f38.jpg'> -->
+<img alt='' class='img_responsible' src='https://d1gnxku736h7az.cloudfront.net/assets/sc_answerform-6183deeed20dd56cb33976bdf59332fb9d513710b7f733ff9b3acca5336c6f38.jpg'>
 </div>
 </div>
 </a>
@@ -136,474 +133,52 @@ HiNativeをご利用の上でわからないことはありますか？
 </div>
 
 </div>
-<div class='main'>
-<div class='section section_height_auto_pc'>
-<div class='searchable_list' searchable_list type_select='questions'>
-<div class='wrapper_searchbox mb_20' search_form>
-<form class="search_form" action="/ja/profiles/2405971/search" accept-charset="UTF-8" method="get">
-<div class='row mb_20'>
-<div class='col-xs-2 col-sm-2 col-md-2 display_none' ng_class="{'is_show':search_form_enabled}">
-<a class='btn btn_back icon-arrow_back' href='#' ng_click='hide_search_options()'></a>
-</div>
-<div class='col-xs col-sm col-md'>
-<div class='row'>
-<input type="text" name="q" id="q" placeholder="自分の質問を検索" ng_focus="normal_user_focused_input()" class="search_input col-xs col-sm col-md" />
-<span class="btn_search" ng_click="normal_user_focused_input()"></span>
-</div>
-</div>
-</div>
-<div class='block_search_option display_none' ng_class="{'is_show':search_form_enabled}">
-<div class='btn-group'>
-<button class='btn btn-default btn-small' data-searchable-type='questions' ng_click='select_search_option($event)' type='button'>
-質問
-</button>
-<button class='btn btn-default btn-small focus' data-searchable-type='bookmarks' ng_click='select_search_option($event)' type='button'>
-ブックマーク
-</button>
-</div>
-</div>
-</form>
-
-</div>
-</div>
-<div class='profile_wrapper' ng_controller='ActivitySummaryCtrl'>
-<div class='profile_header animated' ng_class='{fadeOut:search_form_enabled , fadeIn:hide_search_options}'>
-<div class='profile_header_container'>
-<div class='button_edit spec_button'>
-<a class="btn btn-square btn-small btn_bordered_white" href="/ja/profiles/2405971/edit">編集する
-</a></div>
-<div class='row tmp_profile_user_info mb_30'>
-<div class='profile_img col-xs-3 col-sm-3 col-md-3'>
-<a href="/ja/profiles/2405971/edit"><img data-echo="https://d17ese100x1uvo.cloudfront.net/photos/2402739/ddaf63e97c6d1cf5e7d4c8b64f3c02abc1056a39/thumb.jpg?1524829450" src="https://d1gnxku736h7az.cloudfront.net/assets/loadings/missing_thumb_gray@2x-879e10168ed4ab25bd5114d683aba07c780ffd58480f2c29cf5b037dc54fe64f.png" alt="Missing thumb gray@2x 879e10168ed4ab25bd5114d683aba07c780ffd58480f2c29cf5b037dc54fe64f" />
-</a></div>
-<div class='profile_owner col-xs col-sm col-md'>
-<h1 class='owner_name'>
-<span>
-owner_name
-</span>
+<section class='section section_with_padding section_setting'>
+<div id='config_list'>
+<h1 class='bd_none pl_0 pr_0'>
+設定
 </h1>
 </div>
+<ul class='list-group list-group_link'>
+<li class='list-group-item'>
+<a class="" href="/ja/profiles/2405971/edit?type=change_interface"><span class='interface'></span>
+<div class='box_flex'>
+<p>表示言語を変更する</p>
 </div>
-<div class='point_title mb_10'>
-クイックPts
+</a></li>
+<li class='list-group-item'>
+<a class="" href="/ja/mail_settings/edit"><span class='notification'></span>
+<div class='box_flex'>
+<p>通知設定</p>
 </div>
-<a class='d_block' data-toggle='modal' href='#quick_point_description'>
-<div class='quick_wrapper quick_wrapper_owner mb_15'>
-<div class='header'>
-<span class='icon_stopwatch'></span>
-<div class='quick_level_wrapper'>
-<div class='quick_level'>
-<span class='level_text'>
-Lv.
-</span>
-<span class='level_number'>
-16
-</span>
-<span class='to_next_level'>
-<span class='current_point'>
-11
-</span>
-<span class='max_point'>
-70
-</span>
-</span>
+</a></li>
+<li class='list-group-item'>
+<a class="" href="/ja/settings/my_account"><span class='user'></span>
+<div class='box_flex'>
+<p>アカウント設定</p>
 </div>
-<div class='progress progress_small progress_dark'>
-<div aria-valuemax='100' aria-valuemin='0' aria-valuenow='15' class='progress-bar progress-bar_quick_level' role='progressbar' style='width: 15%'></div>
-</div>
-</div>
-</div>
-<div class='footer'>
-<div class='total_point'>
-<span class='text'>
-Total Points
-</span>
-<span class='number'>
-371
-</span>
-</div>
-<div class='top_percentage'>
-<span class='text'>
-Top
-</span>
-<span class='number'>
-2.43%
-</span>
-</div>
-</div>
+</a></li>
+<li class='list-group-item'>
+<a href='https://hinative.helpshift.com/a/hinative/?l=ja' target='_blank'>
+<span class='help'></span>
+<div class='box_flex'>
+ヘルプ
+<span class='icon-subwin'></span>
 </div>
 </a>
-<!-- /質ポイント -->
-<div class='point_title mb_10'>
-<span class='native_language'>
-母語
-</span>
-<span class='ml_5'>
-クオリティPts
-</span>
-</div>
-<a class='d_block' data-toggle='modal' href='#quality_point_description'>
-<div class='quality_wrapper mb_15'>
-<div class='header'>
-<div class='icon_chat_pink'></div>
-<div class='language'>
-日本語
-</div>
-<div class='language_level'>
-ネイティブ
-</div>
-</div>
-<div class='footer'>
-<div class='total_point'>
-<span class='icon_hat_pink'></span>
-<span class='number'>
-204
-</span>
-<span class='text'>
-Pts
-</span>
-</div>
-<div class='top_percentage'>
-<span class='text'>
-Top
-</span>
-<span class='number'>
-5.79%
-</span>
-</div>
-</div>
-</div>
-
-</a>
-</div>
-</div>
-<div class='height100'>
-<ul class='detailed_profile_wrapper'>
-<li>
 </li>
-<li class='row'>
-<div class='col-xs-6 col-sm-6 col-md-6'>
-<a class="profile_item parts_questions" href="/ja/profiles/2405971/questions"><div class='box'>
-<div class='row middle-xs middle-sm middle-md'>
-<div class='statusname col-xs-6 col-sm-6 col-md-6'>
-<div class='number_label'>質問数</div>
-<div class='icon-balloon_question'></div>
+<li class='list-group-item'>
+<a class="" href="/ja/settings/others"><span class='others'></span>
+<div class='box_flex'>
+<p>その他（利用規約、プライバシーポリシーなど）</p>
 </div>
-<div class='col-xs-6 col-sm-6 col-md-6'>
-<span class='numbers font_numbers_large'>0</span>
-</div>
-</div>
-</div>
-</a></div>
-<div class='col-xs-6 col-sm-6 col-md-6'>
-<a class="profile_item parts_answers" href="/ja/profiles/2405971/answers"><div class='box'>
-<div class='row middle-xs middle-sm middle-md'>
-<div class='statusname col-xs-6 col-sm-6 col-md-6'>
-<div class='number_label'>回答数</div>
-<div class='icon-balloon_answer'></div>
-</div>
-<div class='col-xs-6 col-sm-6 col-md-6'>
-<span class='numbers font_numbers_large'>116</span>
-</div>
-</div>
-</div>
-</a></div>
-</li>
-<li class='row'>
-<div class='col-xs-12 col-sm-12 col-md-12'>
-<div class='profile_item parts_bookmarks bookmark_row' ng_click='show_bookmark_modal()'>
-<div class='box'>
-<div class='row middle-xs middle-sm middle-md'>
-<div class='statusname col-xs-7 col-sm-6 col-md-6'>
-<div class='row middle-xs middle-sm middle-md'>
-<div class='col-xs-3 col-sm-2 col-md-2'>
-<div class='icon-bookmark'></div>
-</div>
-<div class='col-xs-9 col-sm-10 col-md-10'>
-<div class='number_label'>ブックマーク数</div>
-</div>
-</div>
-</div>
-<div class='col-xs-5 col-sm-6 col-md-6'>
-<span class='numbers font_numbers'>0</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</li>
-<ul>
-<li class='row'>
-<div class='col-xs-12 col-sm-12 col-md-12'>
-<a class="profile_item parts_likes" href="/ja/profiles/2405971/likes"><div class='box'>
-<div class='row middle-xs middle-sm middle-md'>
-<div class='statusname col-xs-7 col-sm-6 col-md-6'>
-<div class='row middle-xs middle-sm middle-md'>
-<div class='col-xs-3 col-sm-2 col-md-2'>
-<p class='icon-like'></p>
-</div>
-<div class='col-xs-9 col-sm-10 col-md-10'>
-<p class='number_label'>いいね！された数</p>
-</div>
-</div>
-</div>
-<div class='col-xs-5 col-sm-6 col-md-6'>
-<span class='numbers font_numbers'>54</span>
-</div>
-</div>
-</div>
-</a></div>
-</li>
-<li class='row'>
-<div class='col-xs-12 col-sm-12 col-md-12'>
-<a class="profile_item parts_featured_answers" href="/ja/profiles/2405971/featured_answers"><div class='box'>
-<div class='row middle-xs middle-sm middle-md'>
-<div class='statusname col-xs-7 col-sm-6 col-md-6'>
-<div class='row middle-xs middle-sm middle-md'>
-<div class='col-xs-3 col-sm-2 col-md-2'>
-<p class='icon-crown'></p>
-</div>
-<div class='col-xs-9 col-sm-10 col-md-10'>
-<p class='number_label'>最も役に立った回答に選ばれた数</p>
-</div>
-</div>
-</div>
-<div class='col-xs-5 col-sm-6 col-md-6'>
-<span class='numbers font_numbers'>10</span>
-</div>
-</div>
-</div>
-</a></div>
-</li>
+</a></li>
 </ul>
-</ul>
-</div>
-</div>
-<div class='detailed_introduction_wrapper responsible_layout_block'>
-<div class='intro_list'>
-<div class='intro_tit intro_tit_native profile_label_lang'>
-<p class='d_inlineblock'>母語</p>
-</div>
-<div class='introduction_details language_native_table'>
-<p class='lang_parts'>
-日本語
-<span class='lang_level'>
-ネイティブ
-</span>
-</p>
-
-</div>
-</div>
-<div class='intro_list'>
-<div class='intro_tit intro_tit_study profile_label_lang'>
-<p class='d_inlineblock'>興味のある言語</p>
-</div>
-<div class='introduction_details language_study_table'>
-<a class='study_level_beginner_intermediate language_level_profiles_show' data-toggle='modal' href='#level_description' rel='nofollow'>
-<span>
-英語 (アメリカ)
-</span>
-</a>
-<div class='lang_desc'>
-<p class='link_chroma'>
-<a class='link_chroma' data-toggle='modal' href='#level_description' rel='nofollow'>
-<span class='study_level_intermediate'></span>
-とは？
-</a>
-</p>
-</div>
-</div>
-</div>
-
-<div class='intro_list linked'>
-<div class='intro_tit intro_tit_earth'>
-<p class='d_inlineblock'>詳しい国や地域</p>
-</div>
-<div class='introduction_details'>
-日本
-</div>
-</div>
-<div class='intro_list linked country_table'>
-<div class='intro_tit intro_tit_earth'>
-<p class='d_inlineblock'>興味のある国や地域</p>
-</div>
-<div class='introduction_details'>
-<span>アメリカ</span>
-</div>
-</div>
-<div class='intro_list linked'>
-<div class='intro_tit intro_tit_user'>自己紹介</div>
-<div class='introduction_details intro_profile'>
- I'm studying English!
-</div>
-</div>
-</div>
-<div class='modal fade' id='level_description' tabindex='-1'>
-<div class='modal-dialog modal-dialog_screen'>
-<div class='close_button_wrapper'>
-<a class='btn_close_circle' data-dismiss='modal'></a>
-</div>
-<div class='modal-content'>
-<h2 class='level_image'>
-とは？
-</h2>
-<p class='txt_desc'>
-興味ある言語のレベルを表しています。レベルを設定すると、他のユーザがあなたの質問に回答するときの参考にしてくれます。
-</p>
-<ul class='table_view intro_list'>
-<li class='intro_desc'>
-<p class='study_level_beginner'>初級</p>
-<span>この言語で回答されると理解できない。</span>
-</li>
-<li class='intro_desc'>
-<p class='study_level_beginner_intermediate'>初中級</p>
-<span>簡単な内容であれば理解できる。</span>
-</li>
-<li class='intro_desc'>
-<p class='study_level_intermediate'>中級</p>
-<span>少し長めの文章でもある程度は理解できる。</span>
-</li>
-<li class='intro_desc'>
-<p class='study_level_advanced'>上級</p>
-<span>長い文章や複雑な内容でもだいたい理解できる。</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div class='modal fade' id='bookmark_premium_modal' tabindex='-1'>
-<div class='modal-dialog modal-dialog_content_center'>
-<div class='close_button_wrapper'>
-<a class='btn_close_circle' data-dismiss='modal'></a>
-</div>
-<div class='modal-content'>
-<div class='al_center'>
-<div>
-<div class='img_modal_premium_bookmark'></div>
-<p class='pt_20 mb_20'>
-<span>
-プレミアムユーザーのみブックマークを見ることができます。
-</span>
-</p>
-<p class='al_center mb_20'>
-<a class="btn btn-primary" href="/ja/premium">HiNativeプレミアムの説明をみる
-</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class='modal fade' id='search_premium_modal' tabindex='-1'>
-<div class='modal-dialog modal-dialog_content_center'>
-<div class='close_button_wrapper'>
-<a class='btn_close_circle' data-dismiss='modal'></a>
-</div>
-<div class='modal-content'>
-<div class='al_center'>
-<div>
-<div class='img_modal_premium_search'></div>
-<p class='pt_20 mb_20'>
-<span>
-プレミアムユーザーのみ質問を検索することができます。
-</span>
-</p>
-<p class='al_center mb_20'>
-<a class="btn btn-primary" href="/ja/premium">HiNativeプレミアムの説明をみる
-</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class='modal fade' id='quick_point_description' tabindex='-1'>
-<div class='modal-dialog modal-xs modal-md modal-dialog_patterned_background'>
-<div class='close_button_wrapper'>
-<a class='btn_close_circle' data-dismiss='modal'></a>
-</div>
-<div class='modal-content'>
-<div class='modal-inner'>
-<p class='img_quick_point'></p>
-<div class='text_wrapper'>
-<h1 class='al_xs_left al_sm_center'>
-クイックPtsとは？
-</h1>
-<p class='pb_20 al_left'>
-一定時間内に素早く回答し、質問者本人などにいいねされた場合、加算されるポイントです。素早く回答すると、質問者が喜ぶかも？
-</p>
-<div class='btn_block'>
-<div class='btn btn-primary d_inlineblock' data-dismiss='modal'>
-OK
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class='modal fade' id='quality_point_description' tabindex='-1'>
-<div class='modal-dialog modal-xs modal-md modal-dialog_patterned_background'>
-<div class='close_button_wrapper'>
-<a class='btn_close_circle' data-dismiss='modal'></a>
-</div>
-<div class='modal-content modal-content_pattern_top'>
-<div class='modal-inner'>
-<p class='img_mongasama_quality'></p>
-<div class='text_wrapper'>
-<h1 class='al_xs_left al_sm_center'>
-クオリティPtsとは？
-</h1>
-<p class='pb_20 al_left'>
-あなたの回答に対して、同じ母語のユーザーからいいね！をもらったり、質問者からポジティブな評価をうけると、このポイントが加算されます。<br>また、このポイントによって質問した人が「どの回答がもっとも信頼できるか」を判断することができます。
-</p>
-<div class='btn_block'>
-<div class='btn btn-primary d_inlineblock' data-dismiss='modal'>
-OK
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+</section>
 
 </div>
 
-</div>
-</div>
-<div id='loading'></div>
-
-<div aria-hidden='true' aria-labelledby='login_require_modal_label' class='modal fade' id='login_require_modal' role='dialog' tabindex='-1'>
-<div class='modal-dialog modal-dialog_content_center'>
-<div class='close_button_wrapper'>
-<a class='btn_close_circle' data-dismiss='modal'></a>
-</div>
-<div class='modal-content'>
-<div class='al_center'>
-<p class='mb_20'>
-ログインが必要です
-</p>
-</div>
-<ul class='parallel_arrangement row middle-xs'>
-<li class='col-xs al_center'>
-<a class="btn btn-default" rel="nofollow" href="/ja/users/sign_in">ログイン</a>
-</li>
-<li class='col-xs al_center'>
-<a class="btn btn-submit" rel="nofollow" href="/ja/users/sign_up">新規登録</a>
-</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id='loading_overlay'>
-<div class='indicator'></div>
-</div>
-
-<script src="https://d1gnxku736h7az.cloudfront.net/assets/application-0964bea776e7ebbd6cf2592101600a4cc8838f1eaff9eaf29a791abdf3606c53.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
+<script src="https://d1gnxku736h7az.cloudfront.net/assets/application-d16fccedf6dccae35c8da911275cbafe3b14ba13b85d50cc94df89b38eeb24e0.js" data-turbolinks-track="true" data-turbolinks-eval="false"></script>
 <script>
 //<![CDATA[
 new I18n([{"key":"common.featured_answer","value":"最も役に立った回答"},{"key":"common.new_comment","value":"common.new_comment"},{"key":"common.done_editing","value":"編集を保存"},{"key":"common.cancel","value":"キャンセル"},{"key":"common.confirm","value":"本当によろしいですか？"},{"key":"common.audiopause","value":"マイクボタンを押すと録音が開始します。"},{"key":"common.audiorecording","value":"録音中..."},{"key":"common.disagree_answer","value":"「ちがうかも？」しますか？"},{"key":"questions_show.sending","value":"送信中…"},{"key":"questions_show.close","value":"質問を終了する"},{"key":"questions_show.re-open","value":"質問を再開する"},{"key":"questions_show.closed_question","value":"終了した質問"},{"key":"questions_show.confirm_featured_answer","value":"この回答が最も役に立ったということで、よろしいですか？"},{"key":"questions_show.subscribe","value":"通知を受け取る"},{"key":"questions_show.unsubscribe","value":"通知を無効にする"},{"key":"profiles_search_bookmarks.title","value":"__name__ さんのブックマーク一覧"},{"key":"profiles_search_bookmarks.placeholder","value":"自分のブックマークを検索"},{"key":"profiles_search_questions.title","value":"__name__ さんの質問一覧"},{"key":"profiles_search_questions.placeholder","value":"自分の質問を検索"},{"key":"flash_messages.answers_featured","value":"最も役に立った回答を選びました。"},{"key":"flash_messages.answers_disagree","value":"「ちがうかも？」しました。"},{"key":"flash_messages.answers_like","value":"いいね！しました。"},{"key":"flash_messages.audio_created","value":"音声をアップロードしました。"},{"key":"flash_messages.audio_destroyed","value":"音声が削除されました"},{"key":"flash_messages.image_created","value":"写真が設定されました"},{"key":"flash_messages.image_destroyed","value":"写真が削除されました"},{"key":"flash_messages.bookmarked","value":"ブックマークしました。"},{"key":"flash_messages.unbookmarked","value":"ブックマークを解除しました。"},{"key":"flash_messages.questions_choice","value":"回答しました"},{"key":"flash_messages.questions_close_closed","value":"質問を終了しました"},{"key":"flash_messages.questions_close_opened","value":"質問を再開しました"},{"key":"flash_messages.reports_create","value":"通報ありがとうございました"},{"key":"flash_messages.duplicated_spam_flag","value":"既にスパム報告済みです。"},{"key":"flash_messages.dropfile_invalid_type","value":"ファイル形式が画像、もしくは音声ではありません。PNG, GIF, JPG, WMA, MP3のどれかの形式をアップロードして下さい。"},{"key":"questions_show.confirm_close_question","value":"質問を終了しますか？"},{"key":"questions_show.confirm_reopen_question","value":"質問を再開しますか？"},{"key":"validate.required","value":"入力してください。"},{"key":"validate.name_invalidate","value":"不正なユーザー名です。"},{"key":"validate.minlength","value":"__number__文字以上で入力してください。"},{"key":"validate.maxlength","value":"__number__文字以内で入力してください。"},{"key":"validate.equal_to","value":"パスワードが一致しません。"},{"key":"validate.email_format","value":"メールアドレスを入力してください。"},{"key":"validate.terms_of_use_required","value":"登録するには利用規約の同意にチェックを入れて下さい。"},{"key":"validate.team_invalidate","value":"不正なチームIDです。"},{"key":"landing_trek.valid_coupon","value":"landing_trek.valid_coupon"},{"key":"landing_trek.valid_coupon_jpy","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ 円/月\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_yearly_jpy","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ 円/年\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_usd","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ USD/月\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_yearly_usd","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ USD/年\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.invalid_coupon","value":"\u003cp class=\"alert alert-danger\"\u003eクーポンが見つかりませんでした。\u003c/p\u003e"},{"key":"timeago.prefixAgo","value":""},{"key":"timeago.prefixFromNow","value":"今から"},{"key":"timeago.ago","value":"前"},{"key":"timeago.from_now","value":"後"},{"key":"timeago.less_than_a_minute","value":"1 分未満"},{"key":"timeago.about_a_minute","value":"約 1 分"},{"key":"timeago.minutes","value":"%d 分"},{"key":"timeago.about_an_hour","value":"約 1 時間"},{"key":"timeago.about_hours","value":"約 %d 時間"},{"key":"timeago.a_day","value":"1 日"},{"key":"timeago.days","value":"%d 日"},{"key":"timeago.about_a_month","value":"約 1 ヶ月"},{"key":"timeago.months","value":"約 %d ヶ月"},{"key":"timeago.about_a_year","value":"約 1 年"},{"key":"timeago.years","value":"約 %d 年"}]);

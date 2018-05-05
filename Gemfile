@@ -43,6 +43,9 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.4.1'
   gem 'faker'
   gem 'simplecov'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 
@@ -55,6 +58,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
   gem 'web-console', '~> 2.0'
+end
+
+group :production do
+  gem 'unicorn'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
