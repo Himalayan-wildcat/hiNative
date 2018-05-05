@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+    resources :categories
+    resources :chats
+
+    root to: "users#index"
+  end
+
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "tops#index"
