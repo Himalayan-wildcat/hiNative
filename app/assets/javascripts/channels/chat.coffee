@@ -4,7 +4,23 @@
     disconnected: ->
 
     received: (data) ->
-      $(".message-box").append(data['message'])
+      html = """ <div class="message-box">
+          <li class="messages__list">
+            <span class="messages__name">
+              名前
+            </span>
+            <span class="messages__date">
+
+            </span>
+          </li>
+          <li class="messages__list">
+              <span class="messages__list__message">
+                #{data['message']}
+              </span>
+          </li>
+        </div>"""
+
+      $(".messages").append(html);
 
     speak: (message) ->
       @perform 'speak', message: message
