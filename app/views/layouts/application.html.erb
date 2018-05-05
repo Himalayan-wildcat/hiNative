@@ -1,14 +1,118 @@
 <!DOCTYPE html>
-<html>
   <head>
-    <title>HiNative</title>
+    <title>HiNative | 全ての外国語学習者のためのQ&amp;Aサービス。</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover' name='viewport'>
+<meta content='N8HyX0xz2cesktDgW2B42h5TtVZyfaPMNNOyidUM0Mc' name='google-site-verification'>
+<meta content='HiNative | 全ての外国語学習者のためのQ&amp;Aサービス。' property='og:title'>
+<meta content='article' property='og:type'>
+<meta content='https://hinative.com/ja/questions/type' property='og:url'>
+<meta content='https://d1gnxku736h7az.cloudfront.net/assets/ogp-99f16c9269f60733f36978d6dd47ab0ee648e6e0ef54fe45ecdc9166077d1318.png' property='og:image'>
+<meta content='外国語や語学、文化についてネイティブスピーカーに簡単に質問できる気軽なQ&amp;Aサービスです。110言語以上が対応しています。' property='og:description'>
+<meta content='HiNative' property='og:site_name'>
+<meta content='@HiNativeEN' name='twitter:site'>
+<meta content='summary_large_image' name='twitter:card'>
+<meta content='@HiNativeEN' name='twitter:creator'>
+<meta content='HiNative | 全ての外国語学習者のためのQ&amp;Aサービス。' name='twitter:title'>
+<meta content='外国語や語学、文化についてネイティブスピーカーに簡単に質問できる気軽なQ&amp;Aサービスです。110言語以上が対応しています。' name='twitter:description'>
+<meta content='https://d1gnxku736h7az.cloudfront.net/assets/ogp-99f16c9269f60733f36978d6dd47ab0ee648e6e0ef54fe45ecdc9166077d1318.png' name='twitter:image'>
+<link rel="stylesheet" media="all" href="https://d1gnxku736h7az.cloudfront.net/assets/application-11a390b094c2fa7c409d251b8484c7de6565ad354a42ee9d8aa4256f3b8a7153.css" data-turbolinks-track="true" />
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="rLvvclOdO93w7anRJ+Ter4tep5nsMwUOKf/2UwfArVV53SNm9p7JaYeYielSzyD7Nnz0lNhA8XXu+Tk49Id8Dg==" />
+<link href='https://d1gnxku736h7az.cloudfront.net/assets/favicon-fa4c0f9ce5724648b68f4bda19a55736a8bf85c6bd3897116ca918ba95b87689.ico' rel='shortcut icon'>
+<link href='https://d1gnxku736h7az.cloudfront.net/assets/apple_touch_icon-e1456ac2e83da895d2dda00b3303b5e4b239f16091743258f4b0c37a920df3da.png' rel='apple-touch-icon-precomposed'>
+<link href='https://hinative.com' rel='canonical'>
+
+<link href='/' hreflang='en' rel='alternate'>
+<link href='/' hreflang='ja' rel='alternate'>
+<link href='/' hreflang='zh' rel='alternate'>
+<link href='/' hreflang='es' rel='alternate'>
+<link href='/' hreflang='tr' rel='alternate'>
+<link href='/' hreflang='pt' rel='alternate'>
+<link href='/' hreflang='fr' rel='alternate'>
+<link href='/' hreflang='it' rel='alternate'>
+<link href='/' hreflang='ko' rel='alternate'>
+<link href='/' hreflang='ru' rel='alternate'>
+<link href='/' hreflang='de' rel='alternate'>
+<link href='/' hreflang='pl' rel='alternate'>
+<link href='/' hreflang='zh-TW' rel='alternate'>
+<link href='/' hreflang='pt-BR' rel='alternate'>
+<link href='/' hreflang='vi' rel='alternate'>
   </head>
 
   <body>
+<% if user_signed_in? %>
+<div id='fb-root'></div>
+<nav style="display: block !important" class='navbar navbar-default navbar-fixed-top' id='navbar_body_ft' ng_class="{'js-no_banner': noBanner}" ng_cloak ng_controller='GlobalNavCtrl' ng_init='unreadActivitySize = 1; noBanner = true'>
+<div class='container_nav' id='js-nav_has_height'>
+<div class='flex flex_between'>
+<ul class='nav flex_center'>
+<li class='nav_home' ng_class='{ "active":isCurrent("home") }'>
+<a href="/ja"><span class='icon-home'></span>
+<span class='txt'>ホーム</span>
+</a></li>
+<li class='nav_activity' ng_class='{ "active":isCurrent("activity")}'>
+<a href="/ja/activities"><span activity_balloon class='icon-activity'></span>
+<span class='txt'>通知</span>
+</a></li>
+<li class='question_center_bt l03' ng_class='{ "active":isCurrent("ask")}'>
+<a href="/chats"><p>
+<span class='txt'>質問</span>
+</p>
+</a></li>
+<li class='nav_profile spec_nav_profile' ng_class='{ "active":isCurrent("profile") }'>
+<%= link_to "プロフィール", users_path(current_user.id) %><span class='icon-user'></span>
+</a></li>
+<li class='nav_settings spec_nav_settings' ng_class='{ "active":isCurrent("setting") }'>
+<a href="/ja/settings"><span class='icon-setting'></span>
+<span class='txt'>設定</span>
+</a></li>
+</ul>
+<ul class='nav flex_center' id='nav_for_PC'>
+<li class='button_user'>
+<button aria-expanded='true' aria-haspopup='true' class='js-activated btn-switch dropdown-toggle bd_none' data-hover='dropdown' data-toggle='dropdown' id='dropdownMenuPageUser' type='button'>
+<img src="https://d17ese100x1uvo.cloudfront.net/photos/2402739/ddaf63e97c6d1cf5e7d4c8b64f3c02abc1056a39/thumb.jpg?1524829450" alt="Thumb" />
+</button>
+<ul aria-labelledby='dropdownMenuPageUser' class='dropdown-menu dropdown-menu-right js-activated'>
+<li class='spec_nav_profile'>
+<i class='icon-user'></i>
+<%= link_to "プロフィール", users_path(current_user.id) %>
+</li>
+<li class='spec_nav_settings'>
+<a href="/ja/settings"><i class='icon-setting'></i>
+設定
+</a></li>
+<li>
+<a class="" rel="nofollow" data-method="delete" href="/users/sign_out"><i class='icon-logout'></i>
+ログアウト
+</a></li>
+</ul>
+</li>
+<li class='btn_ask'>
+<a class="btn btn-primary btn-square" href="/chats"><span class='icon-ask'></span>
+質問
+</a></li>
+</li>
+<% if current_user.admin_flg %>
+<li class='btn_ask', style="margin: 0 8px;">
+<a class="btn btn-primary btn-square" href="/admin">管理者画面
+</a>
+</li>
+<% end %>
+</ul>
+</div>
+</div>
+</nav>
+<% end %>
+
+<div class='parentbody' id='questions_type'>
+<div class='container js-wrapper' data-unread-activity-size='1' data-user-id='2405971' id='wrap'></div>
+<div id='flash_message'>
+</div>
     <%= yield %>
   </body>
 </html>
