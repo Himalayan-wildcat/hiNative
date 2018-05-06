@@ -45,14 +45,14 @@ $(function() {
   });
 
   function bottom() {
-  var url = window.location.href;
-  var message = new RegExp(".+chats");
-  if (url.match(message)) {
-    $(".message").animate({
-      scrollTop: $(".message")[0].scrollHeight
-    }, 500);
+    var url = window.location.href;
+    var message = new RegExp(".+chats");
+    if (url.match(message)) {
+      $(".message").animate({
+        scrollTop: $(".message")[0].scrollHeight
+      }, 500);
+    }
   }
-}
 
   $(document).on('keypress', '[data-behavior~=chat_room]', function(event) {
     if ($(".error_message").text()) {
