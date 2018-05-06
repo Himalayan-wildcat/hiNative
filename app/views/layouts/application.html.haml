@@ -86,7 +86,7 @@
                 %a.btn.btn-primary.btn-square{:href => "/chats"}
                   %span.icon-ask
                   質問
-              - if current_user
+              - if current_user.try(:admin?)
                 %li.btn_ask{:style => "margin: 0 8px;"}
                   %a.btn.btn-primary.btn-square{:href => "/admin"}
                     管理者画面
