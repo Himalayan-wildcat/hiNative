@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "tops#index"
   resources :categories, path: '/ja', only: :index
   resources :chats
