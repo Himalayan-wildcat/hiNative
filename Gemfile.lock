@@ -59,7 +59,6 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (10.0.2)
-    cancancan (2.2.0)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -295,7 +294,6 @@ PLATFORMS
 DEPENDENCIES
   administrate
   byebug
-  cancancan
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
