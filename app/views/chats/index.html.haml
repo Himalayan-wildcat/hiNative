@@ -2,36 +2,34 @@
 .chats_main
   .chats_main_head
     %p チャット画面
+  .error_message
   .chats_main_inner
     .message
       %ul.messages
-        %li.messages__list
-          %span.messages__name
-            名前
-          %span.messages__date
-            時間
-        %li.messages__list
-          %span.messages__list__message
-            メッセージ内容
-      %ul.messages
-        %li.messages__list
-          %span.messages__name
-            名前
-          %span.messages__date
-            時間
-        %li.messages__list
-          %span.messages__list__message
-            メッセージ内容
-  .form
-    .form__inner
-      .form__textArea
-        %input{:name => "name", :type => "text"}/
-        .form__mask
-          %label.form__mask__image{:for => "message_image"}
-            %i.fas.fa-image
-            %input#message_image.hidden{:name => "", :type => "file"}/
-        .form__mask
-          %label{:for => "message_audio"}
-            %i.fas.fa-file-audio
-            %input#message_audio.hidden{:name => "", :type => "file"}/
-      %input.submitBtn{:type => "submit", :value => "送信する"}/
+        - @chats.each do |chat|
+          - if chat.user.admin
+            .message-box__left
+          - else
+            .message-box__right
+              %li.messages__list
+                %span.messages__name
+                  = chat.user.name
+                %span.messages__date
+                  = chat.created_at
+              %li.messages__list
+                %span.messages__list__message
+                  = chat.text
+    .form
+      .form__inner
+        .form__textArea
+          %input{"data-behavior" => "chat_room", :name => "name", :type => "text"}/
+          = hidden_field :user, :id
+          .form__mask
+            %label.form__mask__image{:for => "message_image"}
+              %i.fas.fa-image
+              %input#message_image.hidden{:name => "", :type => "file"}/
+          .form__mask
+            %label{:for => "message_audio"}
+              %i.fas.fa-file-audio
+              %input#message_audio.hidden{:name => "", :type => "file"}/
+        %input.submitBtn{:type => "submit", :value => "送信"}/

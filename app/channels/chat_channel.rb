@@ -22,7 +22,7 @@ class ChatChannel < ApplicationCable::Channel
     if chat.save
       ActionCable.server.broadcast "chat_channel_#{params[:userId]}",
       message: chat,
-      user_type: chat.user.admin_flg,
+      user_type: chat.user.admin,
       user_name: chat.user.name
     else
       ActionCable.server.broadcast "chat_channel_#{params[:userId]}",
