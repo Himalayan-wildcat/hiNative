@@ -1,0 +1,151 @@
+%script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+:javascript
+  (adsbygoogle = window.adsbygoogle || []).push({
+     google_ad_client: "ca-pub-6717840198266056",
+     enable_page_level_ads: true
+  });
+%section.section.section_with_padding.section_setting
+  %h1.bd_none カテゴリーを選ぼう！
+  %a.d_box{:href => "/ja/questions/new?type=YouPronounceQuestion"}
+    .box_flex0
+      .circle
+        %span.icon-question_you_pronounce.fontlistico
+  %h2 場面、状況別に質問を探す
+  %ul.list-group.list-group_link
+    %li.list-group-item.type_what
+      %a.d_box{:href => "/ja/questions/new?type=WhatsayQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_what.fontlistico
+        .box_flex
+          %span 飲食店で使えるフレーズ
+    %li.list-group-item.type_which
+      %a.d_box{:href => "/ja/questions/new?type=ChoiceQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_which.fontlistico
+        .box_flex
+          %span 交通機関で使えるフレーズ
+    %li.list-group-item.type_example
+      %a.d_box{:href => "/ja/questions/new?type=ExampleQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_example.fontlistico
+        .box_flex
+          %span 病院で使える表現
+    %li.list-group-item.type_mean
+      %a.d_box{:href => "/ja/questions/new?type=MeaningQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_mean.fontlistico
+        .box_flex
+          %span 日常会話編〜
+          %span.t_small よくつかわれるフレーズ?
+    %li.list-group-item.type_how
+      %a.d_box{:href => "/ja/questions/new?type=DifferenceQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_how.fontlistico
+        .box_flex
+          %span どうちがうの？
+          %span.t_small AとBではどう違いますか？例文も教えてください。
+    %h2 自由に質問がしたい
+    %ul.list-group.list-group_link
+      %li.list-group-item.type_country
+        %a.d_box{:href => "/chats"}
+          .box_flex0
+            .circle
+              %span.icon-earth.fontlistico
+          .box_flex
+            %span (仮)トレーナーに質問をする → チャット画面に移動
+    .feedback_wrap
+      #navi_container
+      %a.feedback_modal{"data-target" => "#feedback_modal", "data-toggle" => "modal", :href => "#feedback_modal"}
+        %i.icon.icon-help
+        お困りですか？
+      #feedback_modal.modal.fade{"aria-labelledby" => "feedback_modal_label", :role => "dialog", :tabindex => "-1"}
+        .modal-dialog{:role => "document"}
+          .close_button_wrapper
+            %a.btn_close_circle{"data-dismiss" => "modal"}
+          .modal-content.feedback_wrapper
+            .modal-body
+              %p.note
+                HiNativeをご利用の上でわからないことはありますか？
+              .list-group
+                %a.list-group-item{:href => "/ja/questions/type"}
+                  %span.issue
+                    カテゴリーの使い方を知りたい
+                %a.list-group-item{"aria-controls" => "answer_help", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#answer_help", :role => "button"}
+                  %span.issue
+                    カテゴリーに無い質問をしたい
+                  #answer_help.panel-collapse.collapse{"aria-labelledby" => "answer_help", :role => "tabpanel"}
+                    .panel-body
+                      %p.note.mb_20.mt_20
+                        %span.issue
+                          質問詳細ページの下部に回答があります。そこから回答してみましょう。
+                      %img.img_responsible{:alt => "", :src => "https://d1gnxku736h7az.cloudfront.net/assets/sc_answerform-6183deeed20dd56cb33976bdf59332fb9d513710b7f733ff9b3acca5336c6f38.jpg"}/
+                %a.list-group-item.js-linkto_modal
+                  %span.issue
+                    使い方を知りたい
+              .list-group
+                %a.list-group-item.item_single{:href => "https://hinative.helpshift.com/a/hinative/?l=ja", :target => "_blank"}
+                  その他（HiNative ヘルプページに飛びます）
+                  %i.icon-subwin
+              .feedback_block{:ng_class => "{\"feedback_block_thanks\":isSent, \"feedback_block\":!isSent}", :ng_controller => "FeedbackCtrl"}
+                .collapsible{:ng_show => "!isSent"}
+                  .page_collapsible{:ng_class => "{ \"collapse-close\":isClosed, \"collapse-open\":!isClosed }"}
+                    .mail.feedback_heading{:ng_cloak => ""}
+                      %div{:ng_class => "{\"feedback_heading_thanks\":isSent, \"formheading\":!isSent }", :ng_click => "toggle()"}
+                        %span.issue
+                          %i.icon-help
+                          問題を報告・その他のお問い合わせ
+                .feedback_form{:ng_cloak => "", :ng_show => "!isClosed"}
+                  %ul
+                    %li
+                      %form#feedback-form{"accept-charset" => "UTF-8", :action => "/ja/feedbacks", "data-remote" => "true", :method => "post", :ng_submit => "submit()"}
+                        .w100.pb_10
+                          .mb_10.mt_10
+                            %p.mb_10
+                              お問い合わせ内容を教えてください。
+                            .select_body.select_large.select_icon_arrow_line_bottom
+                              %select#type{:name => "type"}
+                                %option{:value => "Bug report"} バグ報告
+                                %option{:value => "Suggestion"} 提案
+                                %option{:value => "Other"} その他
+                          .mb_10
+                            %textarea#auto-resize-area.text-fields.d_bloc{:maxlength => "1000", :name => "feedback", :ng_model => "content", :placeholder => "ご用件は何でしょうか？"}
+                              :preserve
+
+                          .mb_10.note_bg
+                            営業日以外（土・日・日本の祝日・年末年始）にいただきましたお問い合わせは、翌営業日以降のご回答となりますのでご了承ください。
+                            %br>/
+                            お問い合わせの内容によりましては、お返事にしばらくお時間を頂戴する場合や回答を致しかねる場合がございます。
+                          .text-right
+                            %input.btn.btn-square{:name => "commit", :ng_class => "{ \"btn-disabled\":!submittable(), \"btn-primary\":submittable() }", :ng_disabled => "!submittable()", :type => "submit", :value => "送る"}/
+                .feedback_thanks_wrap{:ng_cloak => "", :ng_show => "isSent"}
+                  .feedback_thanks_block
+                    .balloon_thanks
+                      ご意見ありがとうございました。
+                    .mt_10.note_bg
+                      営業日以外（土・日・日本の祝日・年末年始）にいただきましたお問い合わせは、翌営業日以降のご回答となりますのでご了承ください。
+                      %br>/
+                      お問い合わせの内容によりましては、お返事にしばらくお時間を頂戴する場合や回答を致しかねる場合がございます。
+%aside.sidebar
+  / /TREK signupの時横にログインサイドバー灰色
+  #loading
+  #login_require_modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "login_require_modal_label", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog.modal-dialog_content_center
+      .close_button_wrapper
+        %a.btn_close_circle{"data-dismiss" => "modal"}
+      .modal-content
+        .al_center
+          %p.mb_20
+            ログインが必要です
+        %ul.parallel_arrangement.row.middle-xs
+          %li.col-xs.al_center
+            %a.btn.btn-default{:href => "/ja/users/sign_in", :rel => "nofollow"} ログイン
+          %li.col-xs.al_center
+            %a.btn.btn-submit{:href => "/ja/users/sign_up", :rel => "nofollow"} 新規登録
+  #loading_overlay
+    .indicator
+  %script{"data-turbolinks-eval" => "false", "data-turbolinks-track" => "true", :src => "https://d1gnxku736h7az.cloudfront.net/assets/application-0964bea776e7ebbd6cf2592101600a4cc8838f1eaff9eaf29a791abdf3606c53.js"}

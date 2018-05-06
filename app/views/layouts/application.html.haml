@@ -1,0 +1,96 @@
+!!!
+%html
+  %head
+    %title HiNative | 全ての外国語学習者のためのQ&amp;Aサービス。
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    %meta{:content => "width=device-width,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover", :name => "viewport"}/
+    %meta{:content => "N8HyX0xz2cesktDgW2B42h5TtVZyfaPMNNOyidUM0Mc", :name => "google-site-verification"}/
+    %meta{:content => "HiNative | 全ての外国語学習者のためのQ&Aサービス。", :property => "og:title"}/
+    %meta{:content => "article", :property => "og:type"}/
+    %meta{:content => "https://hinative.com/ja/questions/type", :property => "og:url"}/
+    %meta{:content => "https://d1gnxku736h7az.cloudfront.net/assets/ogp-99f16c9269f60733f36978d6dd47ab0ee648e6e0ef54fe45ecdc9166077d1318.png", :property => "og:image"}/
+    %meta{:content => "外国語や語学、文化についてネイティブスピーカーに簡単に質問できる気軽なQ&Aサービスです。110言語以上が対応しています。", :property => "og:description"}/
+    %meta{:content => "HiNative", :property => "og:site_name"}/
+    %meta{:content => "@HiNativeEN", :name => "twitter:site"}/
+    %meta{:content => "summary_large_image", :name => "twitter:card"}/
+    %meta{:content => "@HiNativeEN", :name => "twitter:creator"}/
+    %meta{:content => "HiNative | 全ての外国語学習者のためのQ&Aサービス。", :name => "twitter:title"}/
+    %meta{:content => "外国語や語学、文化についてネイティブスピーカーに簡単に質問できる気軽なQ&Aサービスです。110言語以上が対応しています。", :name => "twitter:description"}/
+    %meta{:content => "https://d1gnxku736h7az.cloudfront.net/assets/ogp-99f16c9269f60733f36978d6dd47ab0ee648e6e0ef54fe45ecdc9166077d1318.png", :name => "twitter:image"}/
+    %link{"data-turbolinks-track" => "true", :href => "https://d1gnxku736h7az.cloudfront.net/assets/application-11a390b094c2fa7c409d251b8484c7de6565ad354a42ee9d8aa4256f3b8a7153.css", :media => "all", :rel => "stylesheet"}/
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "rLvvclOdO93w7anRJ+Ter4tep5nsMwUOKf/2UwfArVV53SNm9p7JaYeYielSzyD7Nnz0lNhA8XXu+Tk49Id8Dg==", :name => "csrf-token"}/
+    %link{:href => "https://d1gnxku736h7az.cloudfront.net/assets/favicon-fa4c0f9ce5724648b68f4bda19a55736a8bf85c6bd3897116ca918ba95b87689.ico", :rel => "shortcut icon"}/
+    %link{:href => "https://d1gnxku736h7az.cloudfront.net/assets/apple_touch_icon-e1456ac2e83da895d2dda00b3303b5e4b239f16091743258f4b0c37a920df3da.png", :rel => "apple-touch-icon-precomposed"}/
+    %link{:href => "https://hinative.com", :rel => "canonical"}/
+    %link{:href => "/", :hreflang => "en", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "ja", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "zh", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "es", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "tr", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "pt", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "fr", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "it", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "ko", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "ru", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "de", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "pl", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "zh-TW", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "pt-BR", :rel => "alternate"}/
+    %link{:href => "/", :hreflang => "vi", :rel => "alternate"}/
+  %body
+    - if user_signed_in?
+      #fb-root
+      %nav#navbar_body_ft.navbar.navbar-default.navbar-fixed-top{:ng_class => "{'js-no_banner': noBanner}", :ng_cloak => "", :ng_controller => "GlobalNavCtrl", :ng_init => "unreadActivitySize = 1; noBanner = true"}
+        #js-nav_has_height.container_nav
+          .flex.flex_between
+            %ul.nav.flex_center
+              %li.nav_home{:ng_class => "{ \"active\":isCurrent(\"home\") }"}
+                %a{:href => "/ja"}
+                  %span.icon-home
+                  %span.txt ホーム
+              %li.nav_activity{:ng_class => "{ \"active\":isCurrent(\"activity\")}"}
+                %a{:href => "/ja/activities"}
+                  %span.icon-activity{:activity_balloon => ""}
+                  %span.txt 通知
+              %li.question_center_bt.l03{:ng_class => "{ \"active\":isCurrent(\"ask\")}"}
+                %a{:href => "/chats"}
+                  %p
+                    %span.txt 質問
+              %li.nav_profile.spec_nav_profile{:ng_class => "{ \"active\":isCurrent(\"profile\") }"}
+                = link_to "プロフィール", users_path(current_user.id)
+                %span.icon-user
+              %li.nav_settings.spec_nav_settings{:ng_class => "{ \"active\":isCurrent(\"setting\") }"}
+                %a{:href => "/ja/settings"}
+                  %span.icon-setting
+                  %span.txt 設定
+            %ul#nav_for_PC.nav.flex_center
+              %li.button_user
+                %button#dropdownMenuPageUser.js-activated.btn-switch.dropdown-toggle.bd_none{"aria-expanded" => "true", "aria-haspopup" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :type => "button"}
+                  %img{:alt => "Thumb", :src => "https://d17ese100x1uvo.cloudfront.net/photos/2402739/ddaf63e97c6d1cf5e7d4c8b64f3c02abc1056a39/thumb.jpg?1524829450"}/
+                %ul.dropdown-menu.dropdown-menu-right.js-activated{"aria-labelledby" => "dropdownMenuPageUser"}
+                  %li.spec_nav_profile
+                    %i.icon-user
+                    = link_to "プロフィール", users_path(current_user.id)
+                  %li.spec_nav_settings
+                    %a{:href => "/ja/settings"}
+                      %i.icon-setting
+                      設定
+                  %li
+                    %a{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"}
+                      %i.icon-logout
+                      ログアウト
+              %li.btn_ask
+                %a.btn.btn-primary.btn-square{:href => "/chats"}
+                  %span.icon-ask
+                  質問
+              - if current_user.try(:admin?)
+                %li.btn_ask{:style => "margin: 0 8px;"}
+                  %a.btn.btn-primary.btn-square{:href => "/admin"}
+                    管理者画面
+    #questions_type.parentbody
+      #wrap.container.js-wrapper{"data-unread-activity-size" => "1", "data-user-id" => "2405971"}
+      #flash_message
+      = yield

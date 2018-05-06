@@ -2,7 +2,6 @@
   <head>
     <title>HiNative | 全ての外国語学習者のためのQ&amp;Aサービス。</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <meta content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover' name='viewport'>
@@ -45,6 +44,7 @@
   </head>
 
   <body>
+
 <% if user_signed_in? %>
 <div id='fb-root'></div>
 <nav style="display: block !important" class='navbar navbar-default navbar-fixed-top' id='navbar_body_ft' ng_class="{'js-no_banner': noBanner}" ng_cloak ng_controller='GlobalNavCtrl' ng_init='unreadActivitySize = 1; noBanner = true'>

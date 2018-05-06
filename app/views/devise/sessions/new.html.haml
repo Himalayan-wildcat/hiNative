@@ -1,0 +1,38 @@
+%body
+  %header
+    #fb-root
+    %nav#navbar_body_ft.navbar.navbar-default.navbar_not_login
+      .container_nav.flex.flex_between
+        .nav_brand
+          %a{"data-no-turbolink" => "true", :href => "/"}
+            %i.icon-logo_type
+        .nav_listgroup
+          %ul.login_buttons.flex.flex_center
+            %li
+              %a.btn.btn_bordered_white.btn-mini.btn-square2.track{"data-action" => "click", "data-category" => "sign_in", "data-label" => "null", :href => "/users/sign_in", :rel => "nofollow"} ログイン
+            %li
+              %a.btn.btn-mini.btn-primary2.btn-square2{:href => "/users/sign_up"} 新規登録
+  .page-container
+    .main
+      .section.login-word
+        %h2 ログイン
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            .field-label
+              = f.label :メールアドレス
+              %br/
+            .field-input
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+          .field
+            .field-label
+              = f.label :パスワード
+              %br/
+            .field-input
+              = f.password_field :password, autocomplete: "off"
+          - if devise_mapping.rememberable?
+            .field
+              = f.check_box :remember_me
+              = f.label :自動ログインを有効にする
+          .actions
+            = f.submit "Log in", {class: "submit-btn"}
+        = render "devise/shared/links"

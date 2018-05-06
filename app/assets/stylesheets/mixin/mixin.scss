@@ -1,0 +1,17 @@
+@mixin messagebox($dir: left) {
+  height: 60px;
+  text-align: $dir;
+  margin-bottom: 10px;
+  .messages__list {
+    list-style-type: none;
+    margin-bottom:5px;
+    .messages__date {
+      font-size: 14px;
+      margin-left: 5px;
+      color: gray;
+    }
+    .messages__list__message {
+      font-size: 15px;
+    }
+  }
+}
