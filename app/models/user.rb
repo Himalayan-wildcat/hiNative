@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true, length: {maximum: 12}
 
+  has_many :chats, dependent: :destroy
 end
