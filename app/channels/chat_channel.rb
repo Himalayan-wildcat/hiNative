@@ -11,12 +11,18 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    chat = Chat.new(text: data['message'], user_id: data['userId'])
+    if User.find(data['userId']).admin
+      
+      chat = Chat.new(text: data['message'], user_id: data['userId'], target_id: params[:userId])
+      # adminのチャット画面が出来るまで、target_idを送るフォームはない
+    else
+      chat = Chat.new(text: data['message'], user_id: data['userId'])
+    end
 
     if chat.save
       ActionCable.server.broadcast "chat_channel_#{params[:userId]}",
       message: chat,
-      user_type: chat.user.admin,
+      user_id: chat.user.id,
       user_name: chat.user.name
     else
       ActionCable.server.broadcast "chat_channel_#{params[:userId]}",

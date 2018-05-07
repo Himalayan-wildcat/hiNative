@@ -1,28 +1,57 @@
+$(function() {
+  var href = window.location.href
+  var adminDisplay = new RegExp("/admin")
+  if (href.match(adminDisplay) || href.match("teacher")) {
+    console.log(adminDisplay);
+    <% User.all.each do |user| %>
+      App['chat' + <%=user.id%>] = App.cable.subscriptions.create({
+        channel: 'ChatChannel',
+        userId: <%=user.id%>
+      }, {
+      connected: function() {
+        console.log("connected");
+      },
+      disconnected: function() {
+        console.log("disconnected");
+      },
+      received: function(data) {
+       console.log("received");
+     },
+      speak: function(message, userId) {
+        return this.perform('speak', {
+          message: message,
+          userId: userId
+        });
+      }
+      // setChatroomId: function(chatroomId) {
+      //   this.chatroomId = chatroomId
+      // }
+    });
+    <% end %>
 
+    function bottom() {
+      var url = window.location.href;
+      var message = new RegExp(".+chats");
+      if (url.match(message)) {
+        $(".message").animate({
+          scrollTop: $(".message")[0].scrollHeight
+        }, 500);
+      }
+    }
 
-<% User.all.each do |chatroom| %>
-
-  App['room' + <%=chatroom.id%>] = App.cable.subscriptions.create({channel: 'MessagesChannel', room: <%=chatroom.id%>}, {
-  received: function(data) {
-   $("[data-chatroom='" + this.chatroomId + "']").removeClass('hidden')
-    return $("[data-chatroom='" + this.chatroomId + "']").append(data.message);
-  },
-
-  setChatroomId: function(chatroomId) {
-    this.chatroomId = chatroomId
+    $(document).on('keypress', '[data-behavior~=chat_room]', function(event) {
+      if ($(".error_message").text()) {
+        $(".error_message").text("");
+        $(".error_message").css("display", "none");
+      }
+      if (event.keyCode == 13) {
+        event.preventDefault();
+        var targetId = $("input[type='text']").data('targetid')
+        console.log(targetId);
+        App['chat' + targetId].speak(event.target.value, $('input[type="hidden"]').val());
+        event.target.value = "";
+        bottom();
+      }
+    });
   }
 });
-<% end %>
-
-function submitNewMessage(){
-  $('textarea#message_content').keydown(function(event) {
-    if (event.keyCode == 13) {
-        var msg = event.target.value
-        var chatroomId = $("[data-chatroom]").data().chatroom
-        App['room' + chatroomId].setChatroomId(chatroomId)
-        App['room' + chatroomId].send({message: msg})
-        $('[data-textarea="message"]').val(" ")
-        return false;
-     }
-  });
-}
