@@ -2,12 +2,6 @@ class ChatChannel < ApplicationCable::Channel
   # Called when the consumer has successfully
   # become a subscriber to this channel.
   def subscribed
-    # user = User.find_by(id: params[:room])
-    # if user.admin_flg
-    #     stream_from 'all'
-    # else
-    #     stream_from "chat_room#{params[:room]}"
-    # end
     stream_from "chat_channel_#{params[:userId]}"
 
   end

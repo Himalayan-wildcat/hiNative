@@ -43,7 +43,7 @@
   %body
     - if user_signed_in?
       #fb-root
-      %nav#navbar_body_ft.navbar.navbar-default.navbar-fixed-top{:ng_class => "{'js-no_banner': noBanner}", :ng_cloak => "", :ng_controller => "GlobalNavCtrl", :ng_init => "unreadActivitySize = 1; noBanner = true"}
+      %nav#navbar_body_ft.navbar.navbar-default.navbar-fixed-top{:ng_class => "{'js-no_banner': noBanner}", :ng_cloak => "", :ng_controller => "GlobalNavCtrl", :ng_init => "unreadActivitySize = 1; noBanner = true", :style => "display: block !important"}
         #js-nav_has_height.container_nav
           .flex.flex_between
             %ul.nav.flex_center
@@ -86,9 +86,9 @@
                 %a.btn.btn-primary.btn-square{:href => "/chats"}
                   %span.icon-ask
                   質問
-              - if current_user.try(:admin?)
+              - if current_user.admin
                 %li.btn_ask{:style => "margin: 0 8px;"}
-                  %a.btn.btn-primary.btn-square{:href => "/admin"}
+                  %a.btn.btn-primary.btn-square{:href => admin_root_path}
                     管理者画面
     #questions_type.parentbody
       #wrap.container.js-wrapper{"data-unread-activity-size" => "1", "data-user-id" => "2405971"}

@@ -11,14 +11,14 @@
             .message-box__left
           - else
             .message-box__right
-              %li.messages__list
-                %span.messages__name
-                  = chat.user.name
-                %span.messages__date
-                  = chat.created_at
-              %li.messages__list
-                %span.messages__list__message
-                  = chat.text
+          %li.messages__list
+            %span.messages__name
+              = chat.user.name
+            %span.messages__date
+              = chat.created_at
+          %li.messages__list
+            %span.messages__list__message
+              = chat.text
     .form
       .form__inner
         .form__textArea
