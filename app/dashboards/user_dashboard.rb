@@ -8,6 +8,7 @@ class UserDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    chats: Field::HasMany,
     id: Field::Number,
     email: Field::String,
     encrypted_password: Field::String,
@@ -21,8 +22,8 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_ip: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    admin_flg: Field::Boolean,
     name: Field::String,
+    admin: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,15 +32,16 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :chats,
     :id,
     :email,
     :encrypted_password,
-    :reset_password_token,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :chats,
     :id,
     :email,
     :encrypted_password,
@@ -53,14 +55,15 @@ class UserDashboard < Administrate::BaseDashboard
     :last_sign_in_ip,
     :created_at,
     :updated_at,
-    :admin_flg,
     :name,
+    :admin,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :chats,
     :email,
     :encrypted_password,
     :reset_password_token,
@@ -71,8 +74,8 @@ class UserDashboard < Administrate::BaseDashboard
     :last_sign_in_at,
     :current_sign_in_ip,
     :last_sign_in_ip,
-    :admin_flg,
     :name,
+    :admin,
   ].freeze
 
   # Overwrite this method to customize how users are displayed
