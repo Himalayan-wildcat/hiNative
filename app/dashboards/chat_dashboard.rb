@@ -8,11 +8,12 @@ class ChatDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    user: Field::BelongsTo,
     id: Field::Number,
     text: Field::Text,
-    user_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    target_id: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -21,28 +22,30 @@ class ChatDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :user,
     :id,
     :text,
-    :user_id,
     :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :user,
     :id,
     :text,
-    :user_id,
     :created_at,
     :updated_at,
+    :target_id,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :user,
     :text,
-    :user_id,
+    :target_id,
   ].freeze
 
   # Overwrite this method to customize how chats are displayed
