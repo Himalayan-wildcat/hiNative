@@ -17,7 +17,7 @@
       .form__inner
         .form__textArea
           %input{"data-behavior" => "chat_room", :name => "name", :type => "text"}/
-          = hidden_field :user, :id, data: { type: current_user.admin }
+          = hidden_field :user, :id, data: { type: current_user.admin, userId: current_user.id }
           .form__mask
             %label.form__mask__image{:for => "message_image"}
               %i.fas.fa-image

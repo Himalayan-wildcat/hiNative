@@ -3,7 +3,6 @@ class ChatChannel < ApplicationCable::Channel
   # become a subscriber to this channel.
   def subscribed
     stream_from "chat_channel_#{params[:userId]}"
-
   end
 
   def unsubscribed
@@ -11,12 +10,11 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    if User.find(data['userId']).admin
-      
-      chat = Chat.new(text: data['message'], user_id: data['userId'], target_id: params[:userId])
+    if current_user.admin
+      chat = Chat.new(text: data['message'], user_id: current_user.id, target_id: params[:userId])
       # adminのチャット画面が出来るまで、target_idを送るフォームはない
     else
-      chat = Chat.new(text: data['message'], user_id: data['userId'])
+      chat = Chat.new(text: data['message'], user_id: current_user.id)
     end
 
     if chat.save

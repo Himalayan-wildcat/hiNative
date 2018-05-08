@@ -1,7 +1,7 @@
 $(function() {
-  if (!$("input[type='hidden']").data("type")) {
-    if (!window.location.href.match("admin")) {
-      var userId = $('input[type="hidden"]').val();
+  if ($("input[type='hidden']")[0]) {
+    bottom();
+      var userId = $('input[type="hidden"]').data("userid");
       App.chat = App.cable.subscriptions.create({
         channel: "ChatChannel",
         userId: userId
@@ -38,7 +38,7 @@ $(function() {
             $(".error_message").text(data['error']);
           }
         },
-        speak: function(message, userId) {
+        speak: function(message) {
           return this.perform('speak', {
             message: message,
             userId: userId
@@ -49,11 +49,9 @@ $(function() {
       function bottom() {
         var url = window.location.href;
         var message = new RegExp(".+chats");
-        if (url.match(message)) {
-          $(".message").animate({
-            scrollTop: $(".message")[0].scrollHeight
-          }, 500);
-        }
+        $(".message").animate({
+          scrollTop: $(".message")[0].scrollHeight
+        }, 500);
       }
 
       $(document).on('keypress', '[data-behavior~=chat_room]', function(event) {
@@ -62,7 +60,7 @@ $(function() {
           $(".error_message").css("display", "none");
         }
         if (event.keyCode == 13) {
-          App.chat.speak(event.target.value, $('input[type="hidden"]').val());
+          App.chat.speak(event.target.value);
           event.target.value = "";
           event.preventDefault();
           bottom();
@@ -71,10 +69,9 @@ $(function() {
 
       $(".submitBtn").on("click", function() {
         var content = $('[data-behavior=chat_room]').val();
-        App.chat.speak(content, $('input[type="hidden"]').val());
+        App.chat.speak(content);
         $('[data-behavior=chat_room]').val("");
         bottom();
       });
     }
-  }
 });
