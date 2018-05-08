@@ -4,6 +4,5 @@ class TeachersController < ApplicationController
     @targetid = User.find(params[:id]).id
     @user = current_user
     @chats = Chat.all.select{ |chat| [chat.user_id, chat.target_id].include?(params[:id].to_i) }
-    # binding.pry
   end
 end
