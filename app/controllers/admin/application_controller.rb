@@ -9,6 +9,9 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
+      if current_user.admin != 1
+        redirect_to controller: 'categories', action: 'index'
+      end
       # TODO Add authentication logic here.
     end
 
