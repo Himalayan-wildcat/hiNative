@@ -2,7 +2,10 @@ module Admin
   class UsersController < Admin::ApplicationController
     # To customize the behavior of this controller,
     # you can overwrite any of the RESTful actions. For example:
-    #
+    # def index
+    #     super
+    #     @resources = User.all
+    # end
     # def index
     #   super
     #   @resources = User.
