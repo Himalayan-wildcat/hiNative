@@ -13,6 +13,5 @@ Rails.application.routes.draw do
   resources :chats
   resources :users, except: [:new, :create], path: '/ja/users/profiles'
   resource  :settings, except: [:new, :create], path: 'ja/settings'
-  get 'users/management', to: 'users#management'
   get "teachers/:id" => "teachers#index"
 end
