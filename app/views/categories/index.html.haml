@@ -52,7 +52,7 @@
     %h2 自由に質問がしたい
     %ul.list-group.list-group_link
       %li.list-group-item.type_country
-        %a.d_box{:href => "/chats"}
+        = link_to chats_path do
           .box_flex0
             .circle
               %span.icon-earth.fontlistico

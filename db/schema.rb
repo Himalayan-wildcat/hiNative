@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-# ActiveRecord::Schema.define(version: 20180506022435) do
-  ActiveRecord::Schema.define(version: 20180505085706) do
+ActiveRecord::Schema.define(version: 20180506022435) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "list", null: false
