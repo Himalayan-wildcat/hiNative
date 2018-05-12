@@ -1,0 +1,80 @@
+%script{:async => "", :src => "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
+:javascript
+  (adsbygoogle = window.adsbygoogle || []).push({
+     google_ad_client: "ca-pub-6717840198266056",
+     enable_page_level_ads: true
+  });
+%section.section.section_with_padding.section_setting
+  %h1.bd_none カテゴリーを選ぼう！
+  %a.d_box{:href => "/ja/questions/new?type=YouPronounceQuestion"}
+    .box_flex0
+      .circle
+        %span.icon-question_you_pronounce.fontlistico
+  %h2 場面、状況別に質問を探す
+  %ul.list-group.list-group_link
+    %li.list-group-item.type_what
+      %a.d_box{:href => "/ja/questions/new?type=WhatsayQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_what.fontlistico
+        .box_flex
+          %span 飲食店で使えるフレーズ
+    %li.list-group-item.type_which
+      %a.d_box{:href => "/ja/questions/new?type=ChoiceQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_which.fontlistico
+        .box_flex
+          %span 交通機関で使えるフレーズ
+    %li.list-group-item.type_example
+      %a.d_box{:href => "/ja/questions/new?type=ExampleQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_example.fontlistico
+        .box_flex
+          %span 病院で使える表現
+    %li.list-group-item.type_mean
+      %a.d_box{:href => "/ja/questions/new?type=MeaningQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_mean.fontlistico
+        .box_flex
+          %span 日常会話編〜
+          %span.t_small よくつかわれるフレーズ?
+    %li.list-group-item.type_how
+      %a.d_box{:href => "/ja/questions/new?type=DifferenceQuestion"}
+        .box_flex0
+          .circle
+            %span.icon-question_how.fontlistico
+        .box_flex
+          %span どうちがうの？
+          %span.t_small AとBではどう違いますか？例文も教えてください。
+    %h2 自由に質問がしたい
+    %ul.list-group.list-group_link
+      %li.list-group-item.type_country
+        = link_to chats_path do
+          .box_flex0
+            .circle
+              %span.icon-earth.fontlistico
+          .box_flex
+            %span (仮)トレーナーに質問をする → チャット画面に移動
+    = render 'shared/modal-help'
+%aside.sidebar
+  / /TREK signupの時横にログインサイドバー灰色
+  #loading
+  #login_require_modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "login_require_modal_label", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog.modal-dialog_content_center
+      .close_button_wrapper
+        %a.btn_close_circle{"data-dismiss" => "modal"}
+      .modal-content
+        .al_center
+          %p.mb_20
+            ログインが必要です
+        %ul.parallel_arrangement.row.middle-xs
+          %li.col-xs.al_center
+            %a.btn.btn-default{:href => "/ja/users/sign_in", :rel => "nofollow"} ログイン
+          %li.col-xs.al_center
+            %a.btn.btn-submit{:href => "/ja/users/sign_up", :rel => "nofollow"} 新規登録
+  #loading_overlay
+    .indicator
+  %script{"data-turbolinks-eval" => "false", "data-turbolinks-track" => "true", :src => "https://d1gnxku736h7az.cloudfront.net/assets/application-0964bea776e7ebbd6cf2592101600a4cc8838f1eaff9eaf29a791abdf3606c53.js"}

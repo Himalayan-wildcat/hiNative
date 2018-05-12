@@ -1,0 +1,30 @@
+%link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.0.12/css/all.css", :integrity => "sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9", :rel => "stylesheet"}/
+.chats_main
+  .chats_main_head
+    %p チャット画面
+  .error_message
+  .chats_main_inner
+    .message
+      %ul.messages
+        - @chats.each do |chat|
+          - if chat.user_id == current_user.id
+            .message-box__right
+              = render partial: "./chats/box", locals: { chat: chat, name: "自分" }
+          - else
+            .message-box__left
+              = render partial: "./chats/box", locals: { chat: chat, name: chat.user.name }
+
+    .form
+      .form__inner
+        .form__textArea
+          %input{ "data-behavior" => "chat_room", name: "name", type: "text" }/
+          = hidden_field :user, :id, data: { userid: current_user.id , roomid: @targetid }
+          .form__mask
+            %label.form__mask__image{:for => "message_image"}
+              %i.fas.fa-image
+              %input#message_image.hidden{:name => "", :type => "file"}/
+          .form__mask
+            %label{:for => "message_audio"}
+              %i.fas.fa-file-audio
+              %input#message_audio.hidden{:name => "", :type => "file"}/
+        %input.submitBtn{:type => "submit", :value => "送信"}/

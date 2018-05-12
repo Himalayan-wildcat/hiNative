@@ -1,0 +1,108 @@
+.feedback_wrap
+  #navi_container
+  #feedback_modal.modal.fade{"aria-labelledby" => "feedback_modal_label", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog{:role => "document"}
+      .close_button_wrapper
+        %a.btn_close_circle{"data-dismiss" => "modal"}
+      .modal-content.feedback_wrapper
+        .modal-body
+          %p.note
+            HiNativeをご利用の上でわからないことはありますか？
+          .list-group
+            %a.list-group-item{:href => "/ja/questions/type"}
+              %span.issue
+                質問がしたい
+            %a.list-group-item{"aria-controls" => "answer_help", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#answer_help", :role => "button"}
+              %span.issue
+                回答がしたい
+              #answer_help.panel-collapse.collapse{"aria-labelledby" => "answer_help", :role => "tabpanel"}
+                .panel-body
+                  %p.note.mb_20.mt_20
+                    %span.issue
+                      質問詳細ページの下部に回答があります。そこから回答してみましょう。
+                  %img.img_responsible{:alt => "", :src => "https://d1gnxku736h7az.cloudfront.net/assets/sc_answerform-6183deeed20dd56cb33976bdf59332fb9d513710b7f733ff9b3acca5336c6f38.jpg"}/
+            %a.list-group-item.js-linkto_modal
+              %span.issue
+                使い方を知りたい
+          .list-group
+            %a.list-group-item.item_single{:href => "https://hinative.helpshift.com/a/hinative/?l=ja", :target => "_blank"}
+              その他（HiNative ヘルプページに飛びます）
+              %i.icon-subwin
+          .feedback_block{:ng_class => "{\"feedback_block_thanks\":isSent, \"feedback_block\":!isSent}", :ng_controller => "FeedbackCtrl"}
+            .collapsible{:ng_show => "!isSent"}
+              .page_collapsible{:ng_class => "{ \"collapse-close\":isClosed, \"collapse-open\":!isClosed }"}
+                .mail.feedback_heading{:ng_cloak => ""}
+                  %div{:ng_class => "{\"feedback_heading_thanks\":isSent, \"formheading\":!isSent }", :ng_click => "toggle()"}
+                    %span.issue
+                      %i.icon-help
+                      問題を報告・その他のお問い合わせ
+            .feedback_form{:ng_cloak => "", :ng_show => "!isClosed"}
+              %ul
+                %li
+                  %form#feedback-form{"accept-charset" => "UTF-8", :action => "/ja/feedbacks", "data-remote" => "true", :method => "post", :ng_submit => "submit()"}
+                    .w100.pb_10
+                      .mb_10.mt_10
+                        %p.mb_10
+                          お問い合わせ内容を教えてください。
+                        .select_body.select_large.select_icon_arrow_line_bottom
+                          %select#type{:name => "type"}
+                            %option{:value => "Bug report"} バグ報告
+                            %option{:value => "Suggestion"} 提案
+                            %option{:value => "Premium"} プレミアム会員について
+                            %option{:value => "HiNative Trek"} HiNative Trekについて
+                            %option{:value => "Other"} その他
+                      .mb_10
+                        %textarea#auto-resize-area.text-fields.d_bloc{:maxlength => "1000", :name => "feedback", :ng_model => "content", :placeholder => "ご用件は何でしょうか？"}
+                          :preserve
+
+                      .mb_10.note_bg
+                        営業日以外（土・日・日本の祝日・年末年始）にいただきましたお問い合わせは、翌営業日以降のご回答となりますのでご了承ください。
+                        %br>/
+                        お問い合わせの内容によりましては、お返事にしばらくお時間を頂戴する場合や回答を致しかねる場合がございます。
+                      .text-right
+                        %input.btn.btn-square{:name => "commit", :ng_class => "{ \"btn-disabled\":!submittable(), \"btn-primary\":submittable() }", :ng_disabled => "!submittable()", :type => "submit", :value => "送る"}/
+            .feedback_thanks_wrap{:ng_cloak => "", :ng_show => "isSent"}
+              .feedback_thanks_block
+                .balloon_thanks
+                  ご意見ありがとうございました。
+                .mt_10.note_bg
+                  営業日以外（土・日・日本の祝日・年末年始）にいただきましたお問い合わせは、翌営業日以降のご回答となりますのでご了承ください。
+                  %br>/
+                  お問い合わせの内容によりましては、お返事にしばらくお時間を頂戴する場合や回答を致しかねる場合がございます。
+%section.section.section_with_padding.section_setting
+  #config_list
+    %h1.bd_none.pl_0.pr_0.config_ttl
+      設定
+  %ul.list-group.list-group_link
+    %li.list-group-item
+      %a{:href => "/ja/profiles/2405971/edit?type=change_interface"}
+        %span.interface
+        .box_flex
+          %p 表示言語を変更する
+    %li.list-group-item
+      %a{:href => "/ja/mail_settings/edit"}
+        %span.notification
+        .box_flex
+          %p 通知設定
+    %li.list-group-item
+      %a{:href => "/ja/settings/my_account"}
+        %span.user
+        .box_flex
+          %p アカウント設定
+    %li.list-group-item
+      %a{:href => "https://hinative.helpshift.com/a/hinative/?l=ja", :target => "_blank"}
+        %span.help
+        .box_flex
+          ヘルプ
+          %span.icon-subwin
+    %li.list-group-item
+      %a{:href => "/ja/settings/others"}
+        %span.others
+        .box_flex
+          %p その他（利用規約、プライバシーポリシーなど）
+= render "shared/modal-help.html.haml"
+%script{"data-turbolinks-eval" => "false", "data-turbolinks-track" => "true", :src => "https://d1gnxku736h7az.cloudfront.net/assets/application-d16fccedf6dccae35c8da911275cbafe3b14ba13b85d50cc94df89b38eeb24e0.js"}
+:javascript
+  //<![CDATA[
+  new I18n([{"key":"common.featured_answer","value":"最も役に立った回答"},{"key":"common.new_comment","value":"common.new_comment"},{"key":"common.done_editing","value":"編集を保存"},{"key":"common.cancel","value":"キャンセル"},{"key":"common.confirm","value":"本当によろしいですか？"},{"key":"common.audiopause","value":"マイクボタンを押すと録音が開始します。"},{"key":"common.audiorecording","value":"録音中..."},{"key":"common.disagree_answer","value":"「ちがうかも？」しますか？"},{"key":"questions_show.sending","value":"送信中…"},{"key":"questions_show.close","value":"質問を終了する"},{"key":"questions_show.re-open","value":"質問を再開する"},{"key":"questions_show.closed_question","value":"終了した質問"},{"key":"questions_show.confirm_featured_answer","value":"この回答が最も役に立ったということで、よろしいですか？"},{"key":"questions_show.subscribe","value":"通知を受け取る"},{"key":"questions_show.unsubscribe","value":"通知を無効にする"},{"key":"profiles_search_bookmarks.title","value":"__name__ さんのブックマーク一覧"},{"key":"profiles_search_bookmarks.placeholder","value":"自分のブックマークを検索"},{"key":"profiles_search_questions.title","value":"__name__ さんの質問一覧"},{"key":"profiles_search_questions.placeholder","value":"自分の質問を検索"},{"key":"flash_messages.answers_featured","value":"最も役に立った回答を選びました。"},{"key":"flash_messages.answers_disagree","value":"「ちがうかも？」しました。"},{"key":"flash_messages.answers_like","value":"いいね！しました。"},{"key":"flash_messages.audio_created","value":"音声をアップロードしました。"},{"key":"flash_messages.audio_destroyed","value":"音声が削除されました"},{"key":"flash_messages.image_created","value":"写真が設定されました"},{"key":"flash_messages.image_destroyed","value":"写真が削除されました"},{"key":"flash_messages.bookmarked","value":"ブックマークしました。"},{"key":"flash_messages.unbookmarked","value":"ブックマークを解除しました。"},{"key":"flash_messages.questions_choice","value":"回答しました"},{"key":"flash_messages.questions_close_closed","value":"質問を終了しました"},{"key":"flash_messages.questions_close_opened","value":"質問を再開しました"},{"key":"flash_messages.reports_create","value":"通報ありがとうございました"},{"key":"flash_messages.duplicated_spam_flag","value":"既にスパム報告済みです。"},{"key":"flash_messages.dropfile_invalid_type","value":"ファイル形式が画像、もしくは音声ではありません。PNG, GIF, JPG, WMA, MP3のどれかの形式をアップロードして下さい。"},{"key":"questions_show.confirm_close_question","value":"質問を終了しますか？"},{"key":"questions_show.confirm_reopen_question","value":"質問を再開しますか？"},{"key":"validate.required","value":"入力してください。"},{"key":"validate.name_invalidate","value":"不正なユーザー名です。"},{"key":"validate.minlength","value":"__number__文字以上で入力してください。"},{"key":"validate.maxlength","value":"__number__文字以内で入力してください。"},{"key":"validate.equal_to","value":"パスワードが一致しません。"},{"key":"validate.email_format","value":"メールアドレスを入力してください。"},{"key":"validate.terms_of_use_required","value":"登録するには利用規約の同意にチェックを入れて下さい。"},{"key":"validate.team_invalidate","value":"不正なチームIDです。"},{"key":"landing_trek.valid_coupon","value":"landing_trek.valid_coupon"},{"key":"landing_trek.valid_coupon_jpy","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ 円/月\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_yearly_jpy","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ 円/年\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_usd","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ USD/月\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_yearly_usd","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ USD/年\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.invalid_coupon","value":"\u003cp class=\"alert alert-danger\"\u003eクーポンが見つかりませんでした。\u003c/p\u003e"},{"key":"timeago.prefixAgo","value":""},{"key":"timeago.prefixFromNow","value":"今から"},{"key":"timeago.ago","value":"前"},{"key":"timeago.from_now","value":"後"},{"key":"timeago.less_than_a_minute","value":"1 分未満"},{"key":"timeago.about_a_minute","value":"約 1 分"},{"key":"timeago.minutes","value":"%d 分"},{"key":"timeago.about_an_hour","value":"約 1 時間"},{"key":"timeago.about_hours","value":"約 %d 時間"},{"key":"timeago.a_day","value":"1 日"},{"key":"timeago.days","value":"%d 日"},{"key":"timeago.about_a_month","value":"約 1 ヶ月"},{"key":"timeago.months","value":"約 %d ヶ月"},{"key":"timeago.about_a_year","value":"約 1 年"},{"key":"timeago.years","value":"約 %d 年"}]);
+  //]]>

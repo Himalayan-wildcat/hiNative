@@ -1,0 +1,181 @@
+#profiles_show.parentbody
+  #wrap.container.js-wrapper{"data-unread-activity-size" => "1", "data-user-id" => "2405971"}
+  #flash_message
+  .page_container
+    .parentblock
+      .main
+        .section.section_height_auto_pc
+          .searchable_list{:searchable_list => "", :type_select => "questions"}
+            .wrapper_searchbox.mb_20{:search_form => ""}
+              %form.search_form{"accept-charset" => "UTF-8", :action => "/ja/profiles/2405971/search", :method => "get"}
+                .row.mb_20
+                  .col-xs-2.col-sm-2.col-md-2.display_none{:ng_class => "{'is_show':search_form_enabled}"}
+                    %a.btn.btn_back.icon-arrow_back{:href => "#", :ng_click => "hide_search_options()"}
+                  .col-xs.col-sm.col-md
+                    .row
+                      %input#q.search_input.col-xs.col-sm.col-md{:name => "q", :ng_focus => "normal_user_focused_input()", :placeholder => "自分の質問を検索", :type => "text"}/
+                      %span.btn_search{:ng_click => "normal_user_focused_input()"}
+                .block_search_option.display_none{:ng_class => "{'is_show':search_form_enabled}"}
+                  .btn-group
+                    %button.btn.btn-default.btn-small{"data-searchable-type" => "questions", :ng_click => "select_search_option($event)", :type => "button"}
+                      質問
+                    %button.btn.btn-default.btn-small.focus{"data-searchable-type" => "bookmarks", :ng_click => "select_search_option($event)", :type => "button"}
+                      ブックマーク
+          .profile_wrapper{:ng_controller => "ActivitySummaryCtrl"}
+            .profile_header.animated{:ng_class => "{fadeOut:search_form_enabled , fadeIn:hide_search_options}"}
+              .profile_header_container
+                .button_edit.spec_button
+                  %a.btn.btn-square.btn-small.btn_bordered_white{:href => "/ja/profiles/2405971/edit"}
+                    編集する
+                .row.tmp_profile_user_info.mb_30
+                  .profile_img.col-xs-3.col-sm-3.col-md-3
+                    %a{:href => "/ja/profiles/2405971/edit"}
+                      %img{:alt => "Missing thumb gray@2x 879e10168ed4ab25bd5114d683aba07c780ffd58480f2c29cf5b037dc54fe64f", "data-echo" => "https://d17ese100x1uvo.cloudfront.net/photos/2402739/ddaf63e97c6d1cf5e7d4c8b64f3c02abc1056a39/thumb.jpg?1524829450", :src => "https://d1gnxku736h7az.cloudfront.net/assets/loadings/missing_thumb_gray@2x-879e10168ed4ab25bd5114d683aba07c780ffd58480f2c29cf5b037dc54fe64f.png"}/
+                  .profile_owner.col-xs.col-sm.col-md
+                    %h1.owner_name
+                      %span
+                        owner_name
+          .detailed_introduction_wrapper.responsible_layout_block
+            .intro_list
+              .intro_tit.intro_tit_native.profile_label_lang
+                %p.d_inlineblock 母語
+              .introduction_details.language_native_table
+                %p.lang_parts
+                  日本語
+                  %span.lang_level
+                    ネイティブ
+            .intro_list
+              .intro_tit.intro_tit_study.profile_label_lang
+                %p.d_inlineblock 興味のある言語
+              .introduction_details.language_study_table
+                %a.study_level_beginner_intermediate.language_level_profiles_show{"data-toggle" => "modal", :href => "#level_description", :rel => "nofollow"}
+                  %span
+                    英語 (アメリカ)
+                .lang_desc
+                  %p.link_chroma
+                    %a.link_chroma{"data-toggle" => "modal", :href => "#level_description", :rel => "nofollow"}
+                      %span.study_level_intermediate
+                      とは？
+            .intro_list.linked
+              .intro_tit.intro_tit_earth
+                %p.d_inlineblock 詳しい国や地域
+              .introduction_details
+                日本
+            .intro_list.linked.country_table
+              .intro_tit.intro_tit_earth
+                %p.d_inlineblock 興味のある国や地域
+              .introduction_details
+                %span アメリカ
+                ,
+                %span 韓国
+            .intro_list.linked
+              .intro_tit.intro_tit_user 自己紹介
+              .introduction_details.intro_profile
+                I'm studying English and Korean.
+                %br>/
+                My name is Hirofumi, now, I'm a 25-years-old Japanese man.
+                %br/
+          #level_description.modal.fade{:tabindex => "-1"}
+            .modal-dialog.modal-dialog_screen
+              .close_button_wrapper
+                %a.btn_close_circle{"data-dismiss" => "modal"}
+              .modal-content
+                %h2.level_image
+                  とは？
+                %p.txt_desc
+                  興味ある言語のレベルを表しています。レベルを設定すると、他のユーザがあなたの質問に回答するときの参考にしてくれます。
+                %ul.table_view.intro_list
+                  %li.intro_desc
+                    %p.study_level_beginner 初級
+                    %span この言語で回答されると理解できない。
+                  %li.intro_desc
+                    %p.study_level_beginner_intermediate 初中級
+                    %span 簡単な内容であれば理解できる。
+                  %li.intro_desc
+                    %p.study_level_intermediate 中級
+                    %span 少し長めの文章でもある程度は理解できる。
+                  %li.intro_desc
+                    %p.study_level_advanced 上級
+                    %span 長い文章や複雑な内容でもだいたい理解できる。
+          #bookmark_premium_modal.modal.fade{:tabindex => "-1"}
+            .modal-dialog.modal-dialog_content_center
+              .close_button_wrapper
+                %a.btn_close_circle{"data-dismiss" => "modal"}
+              .modal-content
+                .al_center
+                  %div
+                    .img_modal_premium_bookmark
+                    %p.pt_20.mb_20
+                      %span
+                        プレミアムユーザーのみブックマークを見ることができます。
+                    %p.al_center.mb_20
+                      %a.btn.btn-primary{:href => "/ja/premium"}
+                        HiNativeプレミアムの説明をみる
+          #search_premium_modal.modal.fade{:tabindex => "-1"}
+            .modal-dialog.modal-dialog_content_center
+              .close_button_wrapper
+                %a.btn_close_circle{"data-dismiss" => "modal"}
+              .modal-content
+                .al_center
+                  %div
+                    .img_modal_premium_search
+                    %p.pt_20.mb_20
+                      %span
+                        プレミアムユーザーのみ質問を検索することができます。
+                    %p.al_center.mb_20
+                      %a.btn.btn-primary{:href => "/ja/premium"}
+                        HiNativeプレミアムの説明をみる
+          #quick_point_description.modal.fade{:tabindex => "-1"}
+            .modal-dialog.modal-xs.modal-md.modal-dialog_patterned_background
+              .close_button_wrapper
+                %a.btn_close_circle{"data-dismiss" => "modal"}
+              .modal-content
+                .modal-inner
+                  %p.img_quick_point
+                  .text_wrapper
+                    %h1.al_xs_left.al_sm_center
+                      クイックPtsとは？
+                    %p.pb_20.al_left
+                      一定時間内に素早く回答し、質問者本人などにいいねされた場合、加算されるポイントです。素早く回答すると、質問者が喜ぶかも？
+                    .btn_block
+                      .btn.btn-primary.d_inlineblock{"data-dismiss" => "modal"}
+                        OK
+          #quality_point_description.modal.fade{:tabindex => "-1"}
+            .modal-dialog.modal-xs.modal-md.modal-dialog_patterned_background
+              .close_button_wrapper
+                %a.btn_close_circle{"data-dismiss" => "modal"}
+              .modal-content.modal-content_pattern_top
+                .modal-inner
+                  %p.img_mongasama_quality
+                  .text_wrapper
+                    %h1.al_xs_left.al_sm_center
+                      クオリティPtsとは？
+                    %p.pb_20.al_left
+                      あなたの回答に対して、同じ母語のユーザーからいいね！をもらったり、質問者からポジティブな評価をうけると、このポイントが加算されます。
+                      %br>/
+                      また、このポイントによって質問した人が「どの回答がもっとも信頼できるか」を判断することができます。
+                    .btn_block
+                      .btn.btn-primary.d_inlineblock{"data-dismiss" => "modal"}
+                        OK
+      = render "shared/modal-help.html.haml"
+#loading
+#login_require_modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "login_require_modal_label", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-dialog_content_center
+    .close_button_wrapper
+      %a.btn_close_circle{"data-dismiss" => "modal"}
+    .modal-content
+      .al_center
+        %p.mb_20
+          ログインが必要です
+      %ul.parallel_arrangement.row.middle-xs
+        %li.col-xs.al_center
+          %a.btn.btn-default{:href => "/ja/users/sign_in", :rel => "nofollow"} ログイン
+        %li.col-xs.al_center
+          %a.btn.btn-submit{:href => "/ja/users/sign_up", :rel => "nofollow"} 新規登録
+#loading_overlay
+  .indicator
+%script{"data-turbolinks-eval" => "false", "data-turbolinks-track" => "true", :src => "https://d1gnxku736h7az.cloudfront.net/assets/application-0964bea776e7ebbd6cf2592101600a4cc8838f1eaff9eaf29a791abdf3606c53.js"}
+:javascript
+  //<![CDATA[
+  new I18n([{"key":"common.featured_answer","value":"最も役に立った回答"},{"key":"common.new_comment","value":"common.new_comment"},{"key":"common.done_editing","value":"編集を保存"},{"key":"common.cancel","value":"キャンセル"},{"key":"common.confirm","value":"本当によろしいですか？"},{"key":"common.audiopause","value":"マイクボタンを押すと録音が開始します。"},{"key":"common.audiorecording","value":"録音中..."},{"key":"common.disagree_answer","value":"「ちがうかも？」しますか？"},{"key":"questions_show.sending","value":"送信中…"},{"key":"questions_show.close","value":"質問を終了する"},{"key":"questions_show.re-open","value":"質問を再開する"},{"key":"questions_show.closed_question","value":"終了した質問"},{"key":"questions_show.confirm_featured_answer","value":"この回答が最も役に立ったということで、よろしいですか？"},{"key":"questions_show.subscribe","value":"通知を受け取る"},{"key":"questions_show.unsubscribe","value":"通知を無効にする"},{"key":"profiles_search_bookmarks.title","value":"__name__ さんのブックマーク一覧"},{"key":"profiles_search_bookmarks.placeholder","value":"自分のブックマークを検索"},{"key":"profiles_search_questions.title","value":"__name__ さんの質問一覧"},{"key":"profiles_search_questions.placeholder","value":"自分の質問を検索"},{"key":"flash_messages.answers_featured","value":"最も役に立った回答を選びました。"},{"key":"flash_messages.answers_disagree","value":"「ちがうかも？」しました。"},{"key":"flash_messages.answers_like","value":"いいね！しました。"},{"key":"flash_messages.audio_created","value":"音声をアップロードしました。"},{"key":"flash_messages.audio_destroyed","value":"音声が削除されました"},{"key":"flash_messages.image_created","value":"写真が設定されました"},{"key":"flash_messages.image_destroyed","value":"写真が削除されました"},{"key":"flash_messages.bookmarked","value":"ブックマークしました。"},{"key":"flash_messages.unbookmarked","value":"ブックマークを解除しました。"},{"key":"flash_messages.questions_choice","value":"回答しました"},{"key":"flash_messages.questions_close_closed","value":"質問を終了しました"},{"key":"flash_messages.questions_close_opened","value":"質問を再開しました"},{"key":"flash_messages.reports_create","value":"通報ありがとうございました"},{"key":"flash_messages.duplicated_spam_flag","value":"既にスパム報告済みです。"},{"key":"flash_messages.dropfile_invalid_type","value":"ファイル形式が画像、もしくは音声ではありません。PNG, GIF, JPG, WMA, MP3のどれかの形式をアップロードして下さい。"},{"key":"questions_show.confirm_close_question","value":"質問を終了しますか？"},{"key":"questions_show.confirm_reopen_question","value":"質問を再開しますか？"},{"key":"validate.required","value":"入力してください。"},{"key":"validate.name_invalidate","value":"不正なユーザー名です。"},{"key":"validate.minlength","value":"__number__文字以上で入力してください。"},{"key":"validate.maxlength","value":"__number__文字以内で入力してください。"},{"key":"validate.equal_to","value":"パスワードが一致しません。"},{"key":"validate.email_format","value":"メールアドレスを入力してください。"},{"key":"validate.terms_of_use_required","value":"登録するには利用規約の同意にチェックを入れて下さい。"},{"key":"validate.team_invalidate","value":"不正なチームIDです。"},{"key":"landing_trek.valid_coupon","value":"landing_trek.valid_coupon"},{"key":"landing_trek.valid_coupon_jpy","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ 円/月\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_yearly_jpy","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ 円/年\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_usd","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ USD/月\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.valid_coupon_yearly_usd","value":"クーポン適用後の価格\u003cp class=\"alert alert-success\"\u003e\u003cb\u003e__description__ USD/年\u003c/b\u003eに割引されます。\u003c/p\u003e"},{"key":"landing_trek.invalid_coupon","value":"\u003cp class=\"alert alert-danger\"\u003eクーポンが見つかりませんでした。\u003c/p\u003e"},{"key":"timeago.prefixAgo","value":""},{"key":"timeago.prefixFromNow","value":"今から"},{"key":"timeago.ago","value":"前"},{"key":"timeago.from_now","value":"後"},{"key":"timeago.less_than_a_minute","value":"1 分未満"},{"key":"timeago.about_a_minute","value":"約 1 分"},{"key":"timeago.minutes","value":"%d 分"},{"key":"timeago.about_an_hour","value":"約 1 時間"},{"key":"timeago.about_hours","value":"約 %d 時間"},{"key":"timeago.a_day","value":"1 日"},{"key":"timeago.days","value":"%d 日"},{"key":"timeago.about_a_month","value":"約 1 ヶ月"},{"key":"timeago.months","value":"約 %d ヶ月"},{"key":"timeago.about_a_year","value":"約 1 年"},{"key":"timeago.years","value":"約 %d 年"}]);
+  //]]>
