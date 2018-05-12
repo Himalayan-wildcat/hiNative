@@ -6,11 +6,13 @@ CarrierWave.configure do |config|
   config.storage = :fog
   config.fog_credentials = {
     provider: 'AWS',
-    aws_access_key_id: Rails.application.secrets.aws_access_key_id,
-    aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
+    aws_access_key_id: ENV['AWS_ACCESS_KEY_ID_HINATIVE'],
+    aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY_HINATIVE'],
     region: 'ap-northeast-1'
   }
 
   config.fog_directory  = 'pjt-hinative' # S3 bucket name in ''
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/pjt-hinative'
 end
+
+#case sentence to be added each for dev., production env.
